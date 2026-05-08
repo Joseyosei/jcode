@@ -1,0 +1,673 @@
+/*
+╔══════════════════════════════════════════════════════════════╗
+║  IMPORTANT CSS PROPERTIES — REFERENCE NOTES                 ║
+╠══════════════════════════════════════════════════════════════╣
+║  color: #hex;              → text colour                     ║
+║  background-color: #hex;   → background fill                 ║
+║  font-family: 'Name';      → typeface                        ║
+║  font-size: 18px;          → text size (px = pixels)         ║
+║  font-weight: 700;         → boldness (400=normal, 700=bold) ║
+║  padding: 16px;            → space INSIDE the element        ║
+║  margin: 16px;             → space OUTSIDE the element       ║
+║  border-radius: 12px;      → rounds corners                  ║
+║  border: 2px solid #hex;   → adds an outline                 ║
+║  box-shadow: 0 4px 12px rgba(0,0,0,.1); → drop shadow       ║
+║  display: flex;            → puts children side-by-side      ║
+║  display: grid;            → grid layout for children        ║
+║  width: 100%;              → stretches to full width         ║
+║  object-fit: cover;        → makes images fill their box     ║
+║  cursor: pointer;          → hand cursor on hover            ║
+║  transition: .2s ease;     → smooth animation on change      ║
+╚══════════════════════════════════════════════════════════════╝
+
+To change the site's colour scheme, edit the :root variables below.
+Every colour on the page comes from those variables — change once,
+updates everywhere.
+*/
+
+/* ── DESIGN TOKENS ─────────────────────────────────────────── */
+:root {
+  --green-dark:   #1b5e20;   /* deep forest green */
+  --green-main:   #2e7d32;   /* primary brand green */
+  --green-mid:    #43a047;   /* medium green */
+  --green-light:  #e8f5e9;   /* pale green background tint */
+  --green-pale:   #f4fbf4;   /* near-white page background */
+  --white:        #ffffff;
+  --text-dark:    #1b2e1c;   /* near-black for headings */
+  --text-body:    #374d38;   /* dark green-grey for body */
+  --text-muted:   #6a8c6b;   /* lighter grey for hints */
+  --border:       rgba(46,125,50,.25);
+  --shadow-sm:    0 2px  8px rgba(27,94,32,.10);
+  --shadow-md:    0 4px 18px rgba(27,94,32,.14);
+  --shadow-lg:    0 8px 32px rgba(27,94,32,.18);
+  --radius-sm:    8px;
+  --radius-md:    14px;
+  --radius-lg:    22px;
+  --transition:   .22s ease;
+  --friend-blue:  #1565c0;   /* matches wireframe friend placeholder */
+}
+
+/* ── RESET & BASE ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: var(--text-body);
+  background-color: var(--green-pale);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a { text-decoration: none; }
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--white);
+  padding: 14px 32px;
+  border-bottom: 3px solid var(--green-main);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Logo group */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2.5px solid var(--green-main);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px 6px 8px;
+  background: var(--green-light);
+  min-width: 160px;
+}
+
+.logo-img {
+  width: 64px;
+  height: auto;
+}
+
+.logo-wordmark {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--green-dark);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Centre title */
+.site-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  letter-spacing: 3px;
+  text-align: center;
+  flex: 1;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 2.5px solid var(--green-main);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--white);
+  min-width: 190px;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 9px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-dark);
+  width: 150px;
+  background: transparent;
+}
+
+.search-bar::placeholder { color: var(--text-muted); }
+
+.search-btn {
+  border: none;
+  background: var(--green-main);
+  color: var(--white);
+  padding: 9px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background var(--transition);
+}
+
+.search-btn:hover { background: var(--green-dark); }
+
+/* ── NAVIGATION ─────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  background: var(--green-main);
+  border-bottom: 2px solid var(--green-dark);
+}
+
+.nav-link {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-right: 1px solid rgba(255,255,255,.18);
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--green-dark);
+}
+
+/* ── MAIN CONTENT WRAPPER ───────────────────────────────────── */
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── HERO SECTION ───────────────────────────────────────────── */
+.hero-section {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Hero image column */
+.hero-img-wrap {
+  flex: 0 0 42%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* Hero text column */
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  border-bottom: 2px solid var(--green-mid);
+  padding-bottom: 8px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+/* ── BOTTOM THREE-COLUMN SECTION ────────────────────────────── */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Shared panel card */
+.stories-panel,
+.thoughts-panel,
+.friends-panel {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  letter-spacing: .5px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* ── STORY CARDS ────────────────────────────────────────────── */
+.stories-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--green-light);
+}
+
+.story-card:last-child { border-bottom: none; padding-bottom: 0; }
+
+.story-img-wrap { width: 100%; }
+
+.story-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+}
+
+.story-text {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ── THOUGHTS BOX ───────────────────────────────────────────── */
+.thoughts-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--green-light);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+
+.thoughts-textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-dark);
+  background: var(--white);
+  outline: none;
+  transition: border var(--transition);
+}
+
+.thoughts-textarea:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 0 0 3px rgba(46,125,50,.15);
+}
+
+.save-btn { align-self: flex-end; }
+
+.save-msg {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green-main);
+  text-align: right;
+  min-height: 18px;
+}
+
+/* ── FRIENDS GRID ───────────────────────────────────────────── */
+.friends-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--green-light);
+  transition: box-shadow var(--transition);
+}
+
+.friend-card:hover { box-shadow: var(--shadow-sm); }
+
+.friend-img-wrap { width: 70px; height: 70px; }
+
+.friend-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2.5px solid var(--green-mid);
+}
+
+/* ── IMAGE PLACEHOLDER SYSTEM ───────────────────────────────── */
+/*
+  These classes create the X-in-a-box placeholder seen in wireframes.
+  They automatically appear when an image fails to load.
+  Once you add real images, the placeholders disappear.
+*/
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide real image by default; show it after load */
+.real-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: 2;
+}
+
+.real-img.loaded { opacity: 1; }
+
+/* Base placeholder */
+.img-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border: 2px solid var(--green-mid);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-align: center;
+  gap: 6px;
+}
+
+.hero-img-wrap        { height: 320px; border-radius: var(--radius-md); }
+.hero-placeholder     { height: 320px; border-radius: var(--radius-md); }
+
+.story-img-wrap       { height: 110px; }
+.story-placeholder    { height: 110px; }
+
+.friend-img-wrap      { width: 70px; height: 70px; border-radius: 50%; }
+.friend-placeholder   {
+  width: 70px; height: 70px; border-radius: 50%;
+  background: var(--friend-blue);
+  border-color: var(--friend-blue);
+  padding-bottom: 0;
+}
+
+/* X diagonal lines (CSS-drawn, like the wireframe boxes) */
+.placeholder-x {
+  position: absolute;
+  inset: 0;
+}
+
+.placeholder-x::before,
+.placeholder-x::after {
+  content: '';
+  position: absolute;
+  background: #bbb;
+  width: 140%;
+  height: 1.5px;
+  top: 50%;
+  left: -20%;
+  transform-origin: center;
+}
+
+.placeholder-x::before { transform: rotate(calc(atan2(var(--h,1),var(--w,1)))); }
+.placeholder-x::after  { transform: rotate(calc(-1 * atan2(var(--h,1),var(--w,1)))); }
+
+/* Simpler: just hard-code the diagonal angles */
+.hero-placeholder   .placeholder-x::before { transform: rotate(25deg); }
+.hero-placeholder   .placeholder-x::after  { transform: rotate(-25deg); }
+.story-placeholder  .placeholder-x::before { transform: rotate(40deg); }
+.story-placeholder  .placeholder-x::after  { transform: rotate(-40deg); }
+
+/* Friend silhouette (head + body oval, like wireframe) */
+.friend-silhouette {
+  position: relative;
+  z-index: 1;
+}
+
+.friend-silhouette::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: rgba(255,255,255,.6);
+  border-radius: 50%;
+  margin: 0 auto 3px;
+}
+
+.friend-silhouette::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 18px;
+  background: rgba(255,255,255,.6);
+  border-radius: 50% 50% 0 0;
+  margin: 0 auto;
+}
+
+.placeholder-note {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding: 0 6px;
+}
+
+.placeholder-note code {
+  font-size: 10px;
+  color: var(--green-main);
+  background: rgba(255,255,255,.7);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.friend-placeholder .placeholder-note {
+  color: rgba(255,255,255,.85);
+}
+
+.friend-placeholder .placeholder-note code {
+  background: rgba(0,0,0,.2);
+  color: #fff;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+/*
+  .btn-primary   → main call-to-action (Join Community, Save)
+  .btn-read-more → secondary story button
+  .btn-add-friend → small friend action button
+  .btn-see-all   → wide friends footer button
+
+  To change button colour: edit background on .btn-primary, etc.
+*/
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-main);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), transform var(--transition);
+  align-self: flex-start;
+}
+
+.btn-primary:hover  { background: var(--green-dark); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-read-more {
+  display: inline-block;
+  background: transparent;
+  color: var(--green-main);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border: 2px solid var(--green-main);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  align-self: flex-start;
+}
+
+.btn-read-more:hover {
+  background: var(--green-main);
+  color: var(--white);
+}
+
+.btn-add-friend {
+  background: var(--green-main);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.btn-add-friend:hover       { background: var(--green-dark); }
+.btn-add-friend.added       { background: #6a8c6b; cursor: default; }
+
+.btn-see-all {
+  width: 100%;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  padding: 10px;
+  border: 2px solid var(--green-main);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.btn-see-all:hover {
+  background: var(--green-main);
+  color: var(--white);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  background: var(--green-dark);
+  padding: 32px 48px;
+  border-top: 3px solid var(--green-mid);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-heading {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  color: rgba(255,255,255,.75);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color var(--transition);
+  display: inline-block;
+}
+
+.footer-link:hover  { color: var(--white); }
+.footer-link.social { padding-left: 2px; }
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-sep {
+  color: rgba(255,255,255,.4);
+}
+
+/* ── RESPONSIVE LAYOUT ───────────────────────────────────────── */
+/*
+  @media queries make the site adapt to smaller screens.
+  max-width: 900px → tablets
+  max-width: 600px → phones
+*/
+
+@media (max-width: 960px) {
+  .bottom-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .friends-panel {
+    grid-column: 1 / -1;
+  }
+
+  .friends-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .site-title { font-size: 1.4rem; order: -1; width: 100%; text-align: center; }
+
+  .hero-section { flex-direction: column; }
+  .hero-img-wrap,
+  .hero-placeholder { height: 220px; flex: none; width: 100%; }
+
+  .bottom-section { grid-template-columns: 1fr; }
+
+  .footer { grid-template-columns: 1fr; padding: 24px; }
+}

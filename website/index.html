@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Belong</title>
+  <link rel="stylesheet" href="style.css">
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  IMPORTANT HTML TAGS — REFERENCE NOTES                      ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  <img src="path/image.jpg" alt="description">               ║
+  ║    → Displays an image. src= is the file path.              ║
+  ║    → alt= describes the image (for accessibility).          ║
+  ║    → ALWAYS fill in alt text!                               ║
+  ║                                                             ║
+  ║  <a href="https://...">Link text</a>                        ║
+  ║    → Creates a clickable link. href= is the destination.    ║
+  ║    → Use href="mailto:you@email.com" for email links.       ║
+  ║    → Use href="tel:1234567" for phone links.                ║
+  ║    → Add target="_blank" to open in a new tab.              ║
+  ║                                                             ║
+  ║  <button onclick="functionName()">Label</button>            ║
+  ║    → Clickable button. onclick= runs JavaScript.            ║
+  ║                                                             ║
+  ║  <textarea placeholder="..."></textarea>                    ║
+  ║    → Multi-line text input box.                             ║
+  ║                                                             ║
+  ║  <input type="text" placeholder="...">                      ║
+  ║    → Single-line text input (search bar, form fields).      ║
+  ║                                                             ║
+  ║  <nav>, <header>, <main>, <footer>, <section>               ║
+  ║    → Semantic layout tags — they organise page structure.   ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ════════════════════════════════
+       HEADER — Logo · Title · Search
+       ════════════════════════════════ -->
+  <header class="header">
+
+    <!-- LOGO
+         ► To swap in your own logo image:
+           1. Put your image file in the images/ folder
+           2. Change src="images/logo.svg" to your file name
+           3. Update alt= with a short description            -->
+    <div class="logo-container">
+      <img src="images/logo.svg"
+           alt="You Belong logo — two hands reaching together"
+           class="logo-img">
+      <span class="logo-wordmark">YOU BELONG</span>
+    </div>
+
+    <!-- SITE TITLE (centre of header) -->
+    <h1 class="site-title">YOU BELONG</h1>
+
+    <!-- SEARCH BAR
+         ► <input type="text"> creates the text field.
+         ► placeholder= shows grey hint text when empty.      -->
+    <div class="search-container">
+      <input type="text"
+             id="searchInput"
+             placeholder="Search..."
+             class="search-bar"
+             aria-label="Search the site"
+             onkeydown="if(event.key==='Enter') handleSearch()">
+      <button class="search-btn" onclick="handleSearch()" aria-label="Go">&#128269;</button>
+    </div>
+
+  </header>
+
+  <!-- ════════════════════════════════
+       NAVIGATION BAR
+       ════════════════════════════════
+       ► Each <a> is one nav item.
+       ► Change href="#" to a page URL when you build more pages. -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#"            class="nav-link active" onclick="setActive(event,this)">Home</a>
+    <a href="#groups"      class="nav-link"        onclick="setActive(event,this)">Community Groups</a>
+    <a href="#stories"     class="nav-link"        onclick="setActive(event,this)">Stories</a>
+    <a href="#events"      class="nav-link"        onclick="setActive(event,this)">Events</a>
+    <a href="#support"     class="nav-link"        onclick="setActive(event,this)">Support Chat</a>
+    <a href="#profile"     class="nav-link"        onclick="setActive(event,this)">Profile</a>
+  </nav>
+
+  <!-- ════════════════════════════════
+       MAIN PAGE CONTENT
+       ════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- ── HERO SECTION ─────────────────────────────────────── -->
+    <section class="hero-section">
+
+      <!-- HERO IMAGE (left column)
+           ► Replace src= with your chosen hero photo.
+           ► Recommended size: at least 700 × 500 px.
+           ► The placeholder X-box shows until you add the image. -->
+      <div class="img-wrap hero-img-wrap">
+        <img src="images/hero.jpg"
+             alt="Diverse group of people smiling and belonging together"
+             class="hero-img real-img"
+             onload="imgLoaded(this)"
+             onerror="imgError(this)">
+        <div class="img-placeholder hero-placeholder">
+          <div class="placeholder-x"></div>
+          <p class="placeholder-note">Hero Image<br><code>images/hero.jpg</code><br>Min 700×500 px</p>
+        </div>
+      </div>
+
+      <!-- HERO TEXT (right column)
+           ► Replace the heading, paragraphs, and button label below. -->
+      <div class="hero-text">
+        <h2 class="hero-heading">We Are Here For You</h2>
+        <!-- ► Replace this line with your tagline or opening sentence -->
+        <p class="hero-sub">A safe, welcoming space where everyone belongs — no matter who you are or where you come from.</p>
+        <!-- ► Replace this line with a second supporting sentence -->
+        <p class="hero-sub">Connect, share stories, and find your community today.</p>
+        <button class="btn-primary" onclick="handleJoin()">Join Community</button>
+      </div>
+
+    </section>
+
+    <!-- ── STORIES · THOUGHTS · FRIENDS ──────────────────────── -->
+    <section class="bottom-section">
+
+      <!-- ── STORY CARDS (left) ── -->
+      <div class="stories-panel" id="stories">
+        <h3 class="panel-heading">Latest Stories</h3>
+        <div class="stories-grid">
+
+          <!-- STORY CARD 1
+               ► Replace src= with your story image (square, ~400×400 px).
+               ► Replace the <p> text with your story title / summary. -->
+          <article class="story-card">
+            <div class="img-wrap story-img-wrap">
+              <img src="images/story1.jpg"
+                   alt="Story 1 — a community member's journey"
+                   class="story-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder story-placeholder">
+                <div class="placeholder-x"></div>
+                <p class="placeholder-note">Story 1<br><code>images/story1.jpg</code></p>
+              </div>
+            </div>
+            <!-- ► Replace this text with your story title/summary -->
+            <p class="story-text">Finding my voice in the community that welcomed me home.</p>
+            <button class="btn-read-more" onclick="readMore(1)">Read More</button>
+          </article>
+
+          <!-- STORY CARD 2 -->
+          <article class="story-card">
+            <div class="img-wrap story-img-wrap">
+              <img src="images/story2.jpg"
+                   alt="Story 2"
+                   class="story-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder story-placeholder">
+                <div class="placeholder-x"></div>
+                <p class="placeholder-note">Story 2<br><code>images/story2.jpg</code></p>
+              </div>
+            </div>
+            <!-- ► Replace this text -->
+            <p class="story-text">How one group changed an entire neighbourhood together.</p>
+            <button class="btn-read-more" onclick="readMore(2)">Read More</button>
+          </article>
+
+          <!-- STORY CARD 3 -->
+          <article class="story-card">
+            <div class="img-wrap story-img-wrap">
+              <img src="images/story3.jpg"
+                   alt="Story 3"
+                   class="story-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder story-placeholder">
+                <div class="placeholder-x"></div>
+                <p class="placeholder-note">Story 3<br><code>images/story3.jpg</code></p>
+              </div>
+            </div>
+            <!-- ► Replace this text -->
+            <p class="story-text">Building bridges between generations through shared stories.</p>
+            <button class="btn-read-more" onclick="readMore(3)">Read More</button>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── THOUGHTS / JOURNAL (centre) ── -->
+      <div class="thoughts-panel">
+        <h3 class="panel-heading">Your Thoughts</h3>
+        <div class="thoughts-box">
+          <!--  <textarea> = multi-line text input.
+                rows= sets the visible height.
+                placeholder= shows hint text when empty.       -->
+          <textarea id="thoughtsInput"
+                    class="thoughts-textarea"
+                    rows="7"
+                    placeholder="Write your thoughts here..."
+                    aria-label="Write your thoughts"></textarea>
+          <button class="btn-primary save-btn" onclick="saveThoughts()">Save</button>
+          <p id="saveMsg" class="save-msg" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- ── FRIENDS (right) ── -->
+      <div class="friends-panel">
+        <h3 class="panel-heading">Friends</h3>
+        <div class="friends-grid">
+
+          <!-- FRIEND CARD 1
+               ► Replace src= with profile photo (square, ~200×200 px).
+               ► Replace "Friend 1" with the person's name.         -->
+          <div class="friend-card">
+            <div class="img-wrap friend-img-wrap">
+              <img src="images/friend1.jpg"
+                   alt="Friend 1 profile photo"
+                   class="friend-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder friend-placeholder">
+                <div class="friend-silhouette"></div>
+                <p class="placeholder-note"><code>friend1.jpg</code></p>
+              </div>
+            </div>
+            <button class="btn-add-friend" onclick="addFriend(this,'Friend 1')">Add friend</button>
+          </div>
+
+          <!-- FRIEND CARD 2 -->
+          <div class="friend-card">
+            <div class="img-wrap friend-img-wrap">
+              <img src="images/friend2.jpg"
+                   alt="Friend 2 profile photo"
+                   class="friend-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder friend-placeholder">
+                <div class="friend-silhouette"></div>
+                <p class="placeholder-note"><code>friend2.jpg</code></p>
+              </div>
+            </div>
+            <button class="btn-add-friend" onclick="addFriend(this,'Friend 2')">Add friend</button>
+          </div>
+
+          <!-- FRIEND CARD 3 -->
+          <div class="friend-card">
+            <div class="img-wrap friend-img-wrap">
+              <img src="images/friend3.jpg"
+                   alt="Friend 3 profile photo"
+                   class="friend-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder friend-placeholder">
+                <div class="friend-silhouette"></div>
+                <p class="placeholder-note"><code>friend3.jpg</code></p>
+              </div>
+            </div>
+            <button class="btn-add-friend" onclick="addFriend(this,'Friend 3')">Add friend</button>
+          </div>
+
+          <!-- FRIEND CARD 4 -->
+          <div class="friend-card">
+            <div class="img-wrap friend-img-wrap">
+              <img src="images/friend4.jpg"
+                   alt="Friend 4 profile photo"
+                   class="friend-img real-img"
+                   onload="imgLoaded(this)" onerror="imgError(this)">
+              <div class="img-placeholder friend-placeholder">
+                <div class="friend-silhouette"></div>
+                <p class="placeholder-note"><code>friend4.jpg</code></p>
+              </div>
+            </div>
+            <button class="btn-add-friend" onclick="addFriend(this,'Friend 4')">Add friend</button>
+          </div>
+
+        </div>
+        <button class="btn-see-all" onclick="seeAllFriends()">SEE ALL FRIENDS</button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════
+       FOOTER — Contact · Help · Social
+       ════════════════════════════════
+       ► href="mailto:..." opens the user's email app.
+       ► href="tel:..."   dials on mobile devices.
+       ► target="_blank"  opens social links in a new tab.    -->
+  <footer class="footer">
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Contact Us</h4>
+      <!-- ► Replace with your real email address -->
+      <a href="mailto:hello@youbelong.com" class="footer-link">hello@youbelong.com</a>
+      <!-- ► Replace with your real phone number -->
+      <a href="tel:1234676767"             class="footer-link">123-467-67-67</a>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Need Help?</h4>
+      <!-- ► Replace href="#" with your help centre page URL -->
+      <a href="#" class="footer-link">Visit our help centre</a>
+      <div class="footer-row">
+        <a href="#" class="footer-link">Privacy</a>
+        <span class="footer-sep">|</span>
+        <a href="#" class="footer-link">Terms</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Follow Us</h4>
+      <!-- ► Replace href="#" with your actual social media URLs -->
+      <a href="#" class="footer-link social" target="_blank" rel="noopener">TikTok</a>
+      <a href="#" class="footer-link social" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" class="footer-link social" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+  </footer>
+
+  <!--
+  NOTE: <script src="script.js"> is placed at the BOTTOM of <body>.
+  This ensures the page elements load before JavaScript runs.
+  Never move it to <head> without adding the defer attribute.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
