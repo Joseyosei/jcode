@@ -1,0 +1,3621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You Belong — Download Your Code</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #FAF7F2;
+    color: #1a1a1a;
+    margin: 0; padding: 0;
+  }
+  .top {
+    background: #E8624A;
+    color: #fff;
+    text-align: center;
+    padding: 32px 20px 24px;
+  }
+  .top h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: 1px; }
+  .top p  { margin: 0; opacity: .85; font-size: 1rem; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  /* HOW-TO BOX */
+  .how-to {
+    background: #fff;
+    border-left: 5px solid #E8624A;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  }
+  .how-to h2 { margin: 0 0 10px; font-size: 1.1rem; color: #E8624A; }
+  .how-to ol { margin: 0; padding-left: 20px; line-height: 2; font-size: .97rem; }
+
+  /* LOGO SECTION */
+  .logo-box {
+    background: #fff3f0;
+    border: 2px solid #E8624A;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 32px;
+  }
+  .logo-box h2 { color: #E8624A; margin: 0 0 10px; font-size: 1.1rem; }
+  .logo-box p  { margin: 0 0 10px; font-size: .94rem; color: #555; line-height: 1.6; }
+  .logo-box code {
+    display: block;
+    background: #1a1a1a;
+    color: #f8f8f2;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: .82rem;
+    margin-top: 8px;
+    word-break: break-word;
+  }
+
+  /* CODE SECTIONS */
+  .code-section {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(0,0,0,.08);
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .code-header {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .code-header .label {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .code-header .desc {
+    font-size: .82rem;
+    opacity: .65;
+    flex: 1;
+  }
+  .dl-btn {
+    background: #E8624A;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 9px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s;
+  }
+  .dl-btn:hover { background: #c94d38; }
+
+  pre {
+    margin: 0;
+    padding: 18px 20px;
+    background: #F8F5F0;
+    font-size: .78rem;
+    line-height: 1.55;
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .dl-all {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .dl-all-btn {
+    background: #E8624A;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 40px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(232,98,74,.35);
+    transition: background .2s, transform .15s;
+  }
+  .dl-all-btn:hover { background: #c94d38; transform: translateY(-1px); }
+
+  footer {
+    text-align: center;
+    color: #aaa;
+    font-size: .85rem;
+    padding-bottom: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>You Belong — Your Code</h1>
+  <p>Download each file separately, then open index.html in your browser</p>
+</div>
+
+<div class="container">
+
+  <!-- HOW TO USE -->
+  <div class="how-to">
+    <h2>📋 How to use these files</h2>
+    <ol>
+      <li>Create a folder on your computer called <strong>YouBelong</strong></li>
+      <li>Click each <strong>⬇ Download</strong> button below — save each file into that folder</li>
+      <li>Inside your YouBelong folder, create a sub-folder called <strong>images</strong></li>
+      <li>Put your photos inside the <strong>images</strong> folder (see the logo section below)</li>
+      <li>Double-click <strong>index.html</strong> — your website opens in a browser!</li>
+    </ol>
+  </div>
+
+  <!-- LOGO INSTRUCTIONS -->
+  <div class="logo-box">
+    <h2>🖐 Where does my logo go?</h2>
+    <p>
+      Your logo goes inside the <strong>images/</strong> folder.
+      Save your logo image as <strong>logo.svg</strong> (or logo.png — just change the name in the code).
+    </p>
+    <p>
+      In <strong>index.html</strong>, this line loads your logo — it's already written for you:
+    </p>
+    <code>&lt;img src="images/logo.svg" alt="You Belong logo"&gt;</code>
+    <p style="margin-top:12px">
+      If you save your logo as a <strong>.png</strong> instead, change <code>logo.svg</code> to <code>logo.png</code> in that line.
+    </p>
+    <p>
+      <strong>The hands SVG logo code</strong> (already in your images/logo.svg file):
+    </p>
+    <code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 260 110&quot;&gt;
+  &lt;!-- Left hand --&gt;
+  &lt;g fill=&quot;#2d7d32&quot;&gt;
+    &lt;rect x=&quot;14&quot; y=&quot;12&quot; width=&quot;10&quot; height=&quot;36&quot; rx=&quot;5&quot;/&gt;
+    &lt;rect x=&quot;26&quot; y=&quot;6&quot;  width=&quot;10&quot; height=&quot;42&quot; rx=&quot;5&quot;/&gt;
+    &lt;rect x=&quot;38&quot; y=&quot;9&quot;  width=&quot;10&quot; height=&quot;39&quot; rx=&quot;5&quot;/&gt;
+    &lt;rect x=&quot;50&quot; y=&quot;14&quot; wid...</code>
+    <p style="margin-top:8px; font-size:.85rem; color:#888">
+      ↑ This is automatically downloaded when you click Download logo.svg below.
+    </p>
+    <button class="dl-btn" style="margin-top:10px"
+            onclick="download('logo.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110">
+  <!-- Left hand -->
+  <g fill="#2d7d32">
+    <rect x="14" y="12" width="10" height="36" rx="5"/>
+    <rect x="26" y="6"  width="10" height="42" rx="5"/>
+    <rect x="38" y="9"  width="10" height="39" rx="5"/>
+    <rect x="50" y="14" width="10" height="34" rx="5"/>
+    <rect x="4"  y="34" width="16" height="10" rx="5" transform="rotate(-25 12 39)"/>
+    <rect x="12" y="42" width="50" height="28" rx="10"/>
+  </g>
+
+  <!-- Right hand (mirrored) -->
+  <g fill="#2d7d32" transform="translate(260,0) scale(-1,1)">
+    <rect x="14" y="12" width="10" height="36" rx="5"/>
+    <rect x="26" y="6"  width="10" height="42" rx="5"/>
+    <rect x="38" y="9"  width="10" height="39" rx="5"/>
+    <rect x="50" y="14" width="10" height="34" rx="5"/>
+    <rect x="4"  y="34" width="16" height="10" rx="5" transform="rotate(-25 12 39)"/>
+    <rect x="12" y="42" width="50" height="28" rx="10"/>
+  </g>
+
+  <!-- YOU BELONG text -->
+  <text x="130" y="88" text-anchor="middle"
+        font-family="Georgia, serif"
+        font-weight="bold"
+        font-size="22"
+        letter-spacing="2"
+        fill="#2d7d32">YOU BELONG</text>
+
+  <!-- Small underline accent -->
+  <line x1="80" y1="95" x2="180" y2="95" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+`, 'image/svg+xml')">
+      ⬇ Download logo.svg
+    </button>
+  </div>
+
+  <!-- DOWNLOAD ALL -->
+  <div class="dl-all">
+    <button class="dl-all-btn" onclick="downloadAll()">⬇ Download All 3 Files at Once</button>
+  </div>
+
+  <!-- INDEX.HTML -->
+  <div class="code-section">
+    <div class="code-header">
+      <span class="label">📄 index.html</span>
+      <span class="desc">Page structure — all sections, text, and image placeholders</span>
+      <button class="dl-btn" onclick="download('index.html', indexCode, 'text/html')">⬇ Download</button>
+    </div>
+    <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;You Belong&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  IMPORTANT HTML TAGS — QUICK REFERENCE                      ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  &lt;img src=&quot;images/file.jpg&quot; alt=&quot;description&quot;&gt;              ║
+  ║    → Adds a photo. src= is the file path.                   ║
+  ║    → alt= describes it (required for accessibility).        ║
+  ║    → ALWAYS write something in alt=&quot;...&quot;                    ║
+  ║                                                             ║
+  ║  &lt;a href=&quot;https://...&quot;&gt;Link text&lt;/a&gt;                        ║
+  ║    → Clickable link.                                        ║
+  ║    → href=&quot;mailto:you@email.com&quot; opens email app.           ║
+  ║    → href=&quot;tel:12345&quot; dials on mobile.                      ║
+  ║    → target=&quot;_blank&quot; opens in a new tab.                    ║
+  ║                                                             ║
+  ║  &lt;button onclick=&quot;functionName()&quot;&gt;Label&lt;/button&gt;            ║
+  ║    → Runs JavaScript when clicked.                          ║
+  ║                                                             ║
+  ║  &lt;textarea placeholder=&quot;hint...&quot;&gt;&lt;/textarea&gt;                ║
+  ║    → Multi-line text input.                                 ║
+  ║                                                             ║
+  ║  &lt;input type=&quot;text&quot; placeholder=&quot;hint...&quot;&gt;                  ║
+  ║    → Single-line text field.                                ║
+  ╚══════════════════════════════════════════════════════════════╝
+  --&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Pacifico&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- ══════════════════════════════════════════════
+       STICKY HEADER — stays visible while scrolling
+       ══════════════════════════════════════════════ --&gt;
+  &lt;header class=&quot;header&quot;&gt;
+
+    &lt;!-- LOGO (left)
+         ► To use your own logo image:
+           1. Save it as images/logo.svg (or .png/.jpg)
+           2. Change src= to match your filename
+           3. Update alt= with a short description     --&gt;
+    &lt;div class=&quot;logo-group&quot;&gt;
+      &lt;div class=&quot;logo-circle&quot;&gt;
+        &lt;img src=&quot;images/logo.svg&quot;
+             alt=&quot;You Belong — hands reaching together&quot;
+             class=&quot;logo-img&quot;&gt;
+      &lt;/div&gt;
+      &lt;span class=&quot;logo-script&quot;&gt;You&lt;br&gt;Belong&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!-- SITE TITLE (centre) — salmon bold heading
+         This same style appears in the footer too    --&gt;
+    &lt;h1 class=&quot;site-title&quot;&gt;You Belong&lt;/h1&gt;
+
+    &lt;!-- HAMBURGER BUTTON — opens the nav on mobile  --&gt;
+    &lt;button class=&quot;nav-toggle&quot; onclick=&quot;toggleNav()&quot; aria-label=&quot;Open navigation&quot;&gt;
+      &amp;#9776;
+    &lt;/button&gt;
+
+  &lt;/header&gt;
+
+  &lt;!-- ══════════════════════════════════════════════
+       NAVIGATION DRAWER
+       Slides down when the ☰ button is clicked.
+       ► Change href=&quot;#section-id&quot; to link to pages.
+       ══════════════════════════════════════════════ --&gt;
+  &lt;nav class=&quot;navbar&quot; id=&quot;navbar&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;a href=&quot;#hero&quot;    class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Home&lt;/a&gt;
+    &lt;a href=&quot;#groups&quot;  class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Community Groups&lt;/a&gt;
+    &lt;a href=&quot;#stories&quot; class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Stories&lt;/a&gt;
+    &lt;a href=&quot;#events&quot;  class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Events&lt;/a&gt;
+    &lt;a href=&quot;#support&quot; class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Support Chat&lt;/a&gt;
+    &lt;a href=&quot;#profile&quot; class=&quot;nav-link&quot; onclick=&quot;closeNav()&quot;&gt;Profile&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         HERO SECTION
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;hero-section&quot; id=&quot;hero&quot;&gt;
+
+      &lt;!-- HERO IMAGE
+           ► Replace src= with your own photo.
+           ► Recommended size: 800 × 600 px or larger.
+           ► Placeholder X-box shows until image is added. --&gt;
+      &lt;div class=&quot;hero-img-wrap&quot;&gt;
+        &lt;img src=&quot;images/hero.jpg&quot;
+             alt=&quot;Diverse children celebrating belonging together&quot;
+             class=&quot;hero-img real-img&quot;
+             onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+        &lt;div class=&quot;img-placeholder hero-ph&quot;&gt;
+          &lt;div class=&quot;x-cross&quot;&gt;&lt;/div&gt;
+          &lt;p class=&quot;ph-label&quot;&gt;Hero Image&lt;br&gt;&lt;code&gt;images/hero.jpg&lt;/code&gt;&lt;br&gt;800 × 600 px&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!-- Overlay badge on top of the photo --&gt;
+        &lt;div class=&quot;hero-badge&quot;&gt;&amp;#127760; Everyone Welcome&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- HERO TEXT
+           ► Replace the pill label, heading, body text, and button. --&gt;
+      &lt;div class=&quot;hero-body&quot;&gt;
+        &lt;span class=&quot;cat-pill cat-pink&quot;&gt;Third Culture Kids (TCKs)&lt;/span&gt;
+
+        &lt;h2 class=&quot;hero-heading&quot;&gt;
+          We Are Here&lt;br&gt;
+          &lt;span class=&quot;accent&quot;&gt;For You&lt;/span&gt; &amp;#128155;
+        &lt;/h2&gt;
+
+        &lt;p class=&quot;hero-text&quot;&gt;
+          Being a Third Culture Kid can sometimes feel confusing — like you belong
+          everywhere and nowhere at the same time. But &lt;strong&gt;you are not alone.&lt;/strong&gt;
+          Every story, culture, and experience you carry makes you unique and strong.
+          Together, we can support one another, celebrate our differences, and find a
+          place where we truly belong.
+        &lt;/p&gt;
+
+        &lt;button class=&quot;btn-pill btn-accent&quot; onclick=&quot;handleJoin()&quot;&gt;Join Our Community&lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         OUR STORIES
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section&quot; id=&quot;stories&quot;&gt;
+
+      &lt;h2 class=&quot;section-heading&quot;&gt;Our &lt;span class=&quot;accent&quot;&gt;Stories&lt;/span&gt;&lt;/h2&gt;
+      &lt;p class=&quot;section-sub&quot;&gt;Real stories from real people. Find one that speaks to you.&lt;/p&gt;
+
+      &lt;!-- STORY CARD 1
+           ► Replace src= with your image (800 × 450 px recommended).
+           ► Replace category pill, title, and description text.        --&gt;
+      &lt;article class=&quot;story-card&quot;&gt;
+        &lt;div class=&quot;story-img-wrap&quot;&gt;
+          &lt;img src=&quot;images/story1.jpg&quot;
+               alt=&quot;Children in traditional cultural dress&quot;
+               class=&quot;story-img real-img&quot;
+               onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+          &lt;div class=&quot;img-placeholder story-ph&quot;&gt;
+            &lt;div class=&quot;x-cross&quot;&gt;&lt;/div&gt;
+            &lt;p class=&quot;ph-label&quot;&gt;Story 1 Image&lt;br&gt;&lt;code&gt;images/story1.jpg&lt;/code&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;story-body&quot;&gt;
+          &lt;span class=&quot;cat-pill cat-pink&quot;&gt;COMMUNITY&lt;/span&gt;
+          &lt;h3 class=&quot;story-title&quot;&gt;Finding Strength in Community&lt;/h3&gt;
+          &lt;p class=&quot;story-text&quot;&gt;Sometimes life feels easier when we know people understand us.
+            In this story, friendship and support help turn loneliness into strength.
+            By connecting with others who share similar experiences, we learn that
+            community can give us courage, comfort, and confidence.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill&quot; onclick=&quot;readMore(1)&quot;&gt;Read More&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+
+      &lt;!-- STORY CARD 2 --&gt;
+      &lt;article class=&quot;story-card&quot;&gt;
+        &lt;div class=&quot;story-img-wrap&quot;&gt;
+          &lt;img src=&quot;images/story2.jpg&quot;
+               alt=&quot;Young people wrapped in country flags&quot;
+               class=&quot;story-img real-img&quot;
+               onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+          &lt;div class=&quot;img-placeholder story-ph&quot;&gt;
+            &lt;div class=&quot;x-cross&quot;&gt;&lt;/div&gt;
+            &lt;p class=&quot;ph-label&quot;&gt;Story 2 Image&lt;br&gt;&lt;code&gt;images/story2.jpg&lt;/code&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;story-body&quot;&gt;
+          &lt;span class=&quot;cat-pill cat-blue&quot;&gt;HEALING&lt;/span&gt;
+          &lt;h3 class=&quot;story-title&quot;&gt;A Journey of Healing and Hope&lt;/h3&gt;
+          &lt;p class=&quot;story-text&quot;&gt;Healing takes time, but every step forward matters. This story
+            shows how challenges can help us grow stronger and discover hope even in difficult
+            moments. With patience, support, and belief in ourselves, brighter days can always
+            be found ahead.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill&quot; onclick=&quot;readMore(2)&quot;&gt;Read More&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+
+      &lt;!-- STORY CARD 3 --&gt;
+      &lt;article class=&quot;story-card&quot;&gt;
+        &lt;div class=&quot;story-img-wrap&quot;&gt;
+          &lt;img src=&quot;images/story3.jpg&quot;
+               alt=&quot;Children from different cultures hugging&quot;
+               class=&quot;story-img real-img&quot;
+               onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+          &lt;div class=&quot;img-placeholder story-ph&quot;&gt;
+            &lt;div class=&quot;x-cross&quot;&gt;&lt;/div&gt;
+            &lt;p class=&quot;ph-label&quot;&gt;Story 3 Image&lt;br&gt;&lt;code&gt;images/story3.jpg&lt;/code&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;story-body&quot;&gt;
+          &lt;span class=&quot;cat-pill cat-green&quot;&gt;UNITY&lt;/span&gt;
+          &lt;h3 class=&quot;story-title&quot;&gt;Together We Are Stronger&lt;/h3&gt;
+          &lt;p class=&quot;story-text&quot;&gt;No one has to face life&#x27;s struggles alone. When people come
+            together, they can overcome challenges, inspire one another, and create positive
+            change. This story reminds us that teamwork, kindness, and unity make us stronger
+            than we could ever be on our own.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill&quot; onclick=&quot;readMore(3)&quot;&gt;Read More&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         SHARE YOUR THOUGHTS
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section thoughts-section&quot;&gt;
+
+      &lt;h2 class=&quot;section-heading&quot;&gt;Share Your &lt;span class=&quot;accent&quot;&gt;Thoughts&lt;/span&gt; &amp;#9998;&amp;#65039;&lt;/h2&gt;
+      &lt;p class=&quot;section-sub&quot;&gt;Write your thoughts here...&lt;/p&gt;
+
+      &lt;div class=&quot;thoughts-card&quot;&gt;
+        &lt;!-- NOTE: &lt;textarea&gt; creates a multi-line text box.
+             placeholder= shows hint text when the box is empty.
+             ► Change the placeholder to anything you like.       --&gt;
+        &lt;textarea id=&quot;thoughtInput1&quot;
+                  class=&quot;thought-input&quot;
+                  rows=&quot;3&quot;
+                  placeholder=&quot;Today I felt...&quot;
+                  aria-label=&quot;How are you feeling today?&quot;&gt;&lt;/textarea&gt;
+
+        &lt;textarea id=&quot;thoughtInput2&quot;
+                  class=&quot;thought-input&quot;
+                  rows=&quot;4&quot;
+                  placeholder=&quot;My story is...&quot;
+                  aria-label=&quot;Share your story&quot;&gt;&lt;/textarea&gt;
+
+        &lt;!-- ► onclick=&quot;saveThoughts()&quot; runs the save function in script.js --&gt;
+        &lt;button class=&quot;btn-pill btn-accent save-btn&quot; onclick=&quot;saveThoughts()&quot;&gt;
+          &amp;#128190; Save
+        &lt;/button&gt;
+        &lt;p id=&quot;saveMsg&quot; class=&quot;save-msg&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         YOUR FRIENDS
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section friends-section&quot;&gt;
+
+      &lt;h2 class=&quot;section-heading&quot;&gt;Your &lt;span class=&quot;accent&quot;&gt;Friends&lt;/span&gt; &amp;#127760;&lt;/h2&gt;
+      &lt;p class=&quot;section-sub&quot;&gt;People from around the world in your circle.&lt;/p&gt;
+
+      &lt;div class=&quot;friends-grid&quot;&gt;
+
+        &lt;!-- FRIEND CARD
+             ► To add a real profile photo:
+               1. Put it in images/ (e.g. images/friend1.jpg)
+               2. The &lt;img&gt; tag loads it; emoji hides automatically
+             ► Replace name, flag emoji, and country for each card. --&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend1.jpg&quot; alt=&quot;Amara&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128105;&amp;#127998;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Amara&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127468;&amp;#127469; Ghana&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Amara&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend2.jpg&quot; alt=&quot;Yuki&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128102;&amp;#127997;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Yuki&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127471;&amp;#127477; Japan&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Yuki&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend3.jpg&quot; alt=&quot;Lena&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128103;&amp;#127995;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Lena&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127465;&amp;#127466; Germany&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Lena&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend4.jpg&quot; alt=&quot;Carlos&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128102;&amp;#127997;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Carlos&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127474;&amp;#127485; Mexico&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Carlos&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend5.jpg&quot; alt=&quot;Priya&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128105;&amp;#127997;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Priya&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127470;&amp;#127475; India&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Priya&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;friend-card&quot;&gt;
+          &lt;div class=&quot;avatar-wrap&quot;&gt;
+            &lt;img src=&quot;images/friend6.jpg&quot; alt=&quot;Sofia&quot; class=&quot;avatar-img real-img&quot;
+                 onload=&quot;imgLoaded(this)&quot; onerror=&quot;imgError(this)&quot;&gt;
+            &lt;div class=&quot;img-placeholder avatar-ph&quot;&gt;
+              &lt;span class=&quot;avatar-emoji&quot;&gt;&amp;#128105;&amp;#127996;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;friend-name&quot;&gt;Sofia&lt;/p&gt;
+          &lt;p class=&quot;friend-country&quot;&gt;&amp;#127463;&amp;#127479; Brazil&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill friend-btn&quot; onclick=&quot;addFriend(this,&#x27;Sofia&#x27;)&quot;&gt;+ Add&lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;button class=&quot;btn-pill btn-accent see-all-btn&quot; onclick=&quot;seeAllFriends()&quot;&gt;
+        See All Friends
+      &lt;/button&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         COMMUNITY GROUPS
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section&quot; id=&quot;groups&quot;&gt;
+
+      &lt;h2 class=&quot;section-heading&quot;&gt;Community &lt;span class=&quot;accent&quot;&gt;Groups&lt;/span&gt; &amp;#129309;&lt;/h2&gt;
+      &lt;p class=&quot;section-sub&quot;&gt;Find your people. Join a group that feels like home.&lt;/p&gt;
+
+      &lt;div class=&quot;groups-grid&quot;&gt;
+
+        &lt;!-- GROUP CARD
+             Each card has a coloured border (border-red/blue/green/yellow).
+             ► Replace emoji, name, and description for each group.        --&gt;
+
+        &lt;div class=&quot;group-card border-red&quot;&gt;
+          &lt;span class=&quot;group-icon&quot;&gt;&amp;#127760;&lt;/span&gt;
+          &lt;h3 class=&quot;group-name&quot;&gt;Global Roots&lt;/h3&gt;
+          &lt;p class=&quot;group-desc&quot;&gt;For those who call multiple countries home.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill red-btn&quot; onclick=&quot;joinGroup(this,&#x27;Global Roots&#x27;)&quot;&gt;Join Group&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;group-card border-blue&quot;&gt;
+          &lt;span class=&quot;group-icon&quot;&gt;&amp;#127912;&lt;/span&gt;
+          &lt;h3 class=&quot;group-name&quot;&gt;Creative Cultures&lt;/h3&gt;
+          &lt;p class=&quot;group-desc&quot;&gt;Art, music and dance from every corner of the world.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill blue-btn&quot; onclick=&quot;joinGroup(this,&#x27;Creative Cultures&#x27;)&quot;&gt;Join Group&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;group-card border-green&quot;&gt;
+          &lt;span class=&quot;group-icon&quot;&gt;&amp;#128218;&lt;/span&gt;
+          &lt;h3 class=&quot;group-name&quot;&gt;Young Explorers&lt;/h3&gt;
+          &lt;p class=&quot;group-desc&quot;&gt;A safe space for kids discovering who they are.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill green-btn&quot; onclick=&quot;joinGroup(this,&#x27;Young Explorers&#x27;)&quot;&gt;Join Group&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;group-card border-yellow&quot;&gt;
+          &lt;span class=&quot;group-icon&quot;&gt;&amp;#128172;&lt;/span&gt;
+          &lt;h3 class=&quot;group-name&quot;&gt;Language Swap&lt;/h3&gt;
+          &lt;p class=&quot;group-desc&quot;&gt;Learn a new language from a new friend.&lt;/p&gt;
+          &lt;button class=&quot;btn-outline-pill yellow-btn&quot; onclick=&quot;joinGroup(this,&#x27;Language Swap&#x27;)&quot;&gt;Join Group&lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         UPCOMING EVENTS
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section&quot; id=&quot;events&quot;&gt;
+
+      &lt;h2 class=&quot;section-heading&quot;&gt;Upcoming &lt;span class=&quot;accent&quot;&gt;Events&lt;/span&gt; &amp;#128197;&lt;/h2&gt;
+      &lt;p class=&quot;section-sub&quot;&gt;Meet up, learn, and celebrate together.&lt;/p&gt;
+
+      &lt;!-- EVENT CARD
+           ► Replace the date (day + month), event name, and description.
+           ► The salmon date badge is styled purely with CSS — no image needed. --&gt;
+
+      &lt;div class=&quot;event-card&quot;&gt;
+        &lt;div class=&quot;event-date-badge&quot;&gt;
+          &lt;span class=&quot;event-day&quot;&gt;14&lt;/span&gt;
+          &lt;span class=&quot;event-month&quot;&gt;JUN&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;!-- ► Replace event name --&gt;
+        &lt;h3 class=&quot;event-name&quot;&gt;Global Culture Day&lt;/h3&gt;
+        &lt;!-- ► Replace event description --&gt;
+        &lt;p class=&quot;event-desc&quot;&gt;Celebrate the colours of the world with food, music and dance.
+          Open to all ages.&lt;/p&gt;
+        &lt;button class=&quot;btn-pill btn-accent rsvp-btn&quot;
+                onclick=&quot;rsvp(this,&#x27;Global Culture Day&#x27;)&quot;&gt;RSVP&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;event-card&quot;&gt;
+        &lt;div class=&quot;event-date-badge&quot;&gt;
+          &lt;span class=&quot;event-day&quot;&gt;21&lt;/span&gt;
+          &lt;span class=&quot;event-month&quot;&gt;JUN&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;event-name&quot;&gt;Story Circle for Kids&lt;/h3&gt;
+        &lt;p class=&quot;event-desc&quot;&gt;Children share stories from their home countries in a safe and
+          fun environment.&lt;/p&gt;
+        &lt;button class=&quot;btn-pill btn-accent rsvp-btn&quot;
+                onclick=&quot;rsvp(this,&#x27;Story Circle for Kids&#x27;)&quot;&gt;RSVP&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;event-card&quot;&gt;
+        &lt;div class=&quot;event-date-badge&quot;&gt;
+          &lt;span class=&quot;event-day&quot;&gt;5&lt;/span&gt;
+          &lt;span class=&quot;event-month&quot;&gt;JUL&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;event-name&quot;&gt;Unity Walk&lt;/h3&gt;
+        &lt;p class=&quot;event-desc&quot;&gt;A community walk celebrating togetherness and belonging.
+          All welcome.&lt;/p&gt;
+        &lt;button class=&quot;btn-pill btn-accent rsvp-btn&quot;
+                onclick=&quot;rsvp(this,&#x27;Unity Walk&#x27;)&quot;&gt;RSVP&lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- ══════════════════════════════════════════
+         SUPPORT CHAT
+         ══════════════════════════════════════════ --&gt;
+    &lt;section class=&quot;page-section&quot; id=&quot;support&quot;&gt;
+
+      &lt;div class=&quot;chat-widget&quot;&gt;
+
+        &lt;!-- Chat header — salmon background --&gt;
+        &lt;div class=&quot;chat-header&quot;&gt;
+          &lt;div class=&quot;chat-logo-circle&quot;&gt;
+            &lt;img src=&quot;images/logo.svg&quot; alt=&quot;You Belong&quot; class=&quot;chat-logo-img&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;chat-header-text&quot;&gt;
+            &lt;h3 class=&quot;chat-title&quot;&gt;Support Chat&lt;/h3&gt;
+            &lt;p class=&quot;chat-subtitle&quot;&gt;We&#x27;re here for you, always &amp;#128155;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;!-- Green dot = online indicator --&gt;
+          &lt;span class=&quot;online-dot&quot; title=&quot;Online&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Message area — messages appear here via JavaScript --&gt;
+        &lt;div class=&quot;chat-messages&quot; id=&quot;chatMessages&quot;&gt;
+          &lt;!-- Opening message from the site --&gt;
+          &lt;div class=&quot;chat-bubble received&quot;&gt;
+            Hi! &amp;#128075; Welcome to You Belong. How are you feeling today?
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Input row
+             NOTE: onkeydown=&quot;if(event.key===&#x27;Enter&#x27;)sendMessage()&quot;
+                   → pressing Enter triggers the send function.       --&gt;
+        &lt;div class=&quot;chat-input-row&quot;&gt;
+          &lt;input type=&quot;text&quot;
+                 id=&quot;chatInput&quot;
+                 class=&quot;chat-input&quot;
+                 placeholder=&quot;Type a message...&quot;
+                 aria-label=&quot;Type your message&quot;
+                 onkeydown=&quot;if(event.key===&#x27;Enter&#x27;)sendMessage()&quot;&gt;
+          &lt;button class=&quot;btn-pill btn-accent chat-send-btn&quot;
+                  onclick=&quot;sendMessage()&quot;&gt;Send&lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+    &lt;/section&gt;
+
+  &lt;/main&gt;
+
+  &lt;!-- ══════════════════════════════════════════════
+       FOOTER — dark background
+       &quot;You Belong&quot; appears here in the same salmon
+       heading style as the top of the page.
+       ══════════════════════════════════════════════ --&gt;
+  &lt;footer class=&quot;footer&quot;&gt;
+
+    &lt;!-- Brand row: logo + &quot;You Belong&quot; title + tagline --&gt;
+    &lt;div class=&quot;footer-brand-row&quot;&gt;
+      &lt;div class=&quot;footer-logo-group&quot;&gt;
+        &lt;div class=&quot;footer-logo-circle&quot;&gt;
+          &lt;img src=&quot;images/logo.svg&quot; alt=&quot;You Belong logo&quot; class=&quot;footer-logo-img&quot;&gt;
+        &lt;/div&gt;
+        &lt;!-- &quot;You Belong&quot; in the same salmon heading style as the header title
+             ► This is what the user asked for: same style as the heading --&gt;
+        &lt;span class=&quot;footer-logo-script&quot;&gt;You&lt;br&gt;Belong&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;p class=&quot;footer-tagline&quot;&gt;A community for everyone, everywhere.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- &quot;You Belong&quot; heading — same salmon bold style as site title in header --&gt;
+    &lt;p class=&quot;footer-site-title&quot;&gt;You Belong&lt;/p&gt;
+
+    &lt;hr class=&quot;footer-divider&quot;&gt;
+
+    &lt;!-- Info columns --&gt;
+    &lt;div class=&quot;footer-cols&quot;&gt;
+
+      &lt;div class=&quot;footer-col&quot;&gt;
+        &lt;h4 class=&quot;footer-col-heading&quot;&gt;Contact Us&lt;/h4&gt;
+        &lt;!-- NOTE: href=&quot;mailto:...&quot; opens the user&#x27;s email app --&gt;
+        &lt;!-- ► Replace with your real email --&gt;
+        &lt;a href=&quot;mailto:hello@youbelong.com&quot; class=&quot;footer-link&quot;&gt;hello@youbelong.com&lt;/a&gt;
+        &lt;!-- NOTE: href=&quot;tel:...&quot; dials on mobile --&gt;
+        &lt;!-- ► Replace with your real phone --&gt;
+        &lt;a href=&quot;tel:1234676767&quot;             class=&quot;footer-link&quot;&gt;123-467-67-67&lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;footer-col&quot;&gt;
+        &lt;h4 class=&quot;footer-col-heading&quot;&gt;Need Help?&lt;/h4&gt;
+        &lt;!-- ► Replace # with your help page URL --&gt;
+        &lt;a href=&quot;#&quot; class=&quot;footer-link&quot;&gt;Visit our Help Centre&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;footer-link&quot;&gt;Privacy Policy&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;footer-link&quot;&gt;Terms of Use&lt;/a&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class=&quot;footer-social&quot;&gt;
+      &lt;h4 class=&quot;footer-col-heading&quot;&gt;Follow Us&lt;/h4&gt;
+      &lt;!-- NOTE: target=&quot;_blank&quot; opens social links in a new tab --&gt;
+      &lt;!-- ► Replace # with your real social URLs --&gt;
+      &lt;a href=&quot;#&quot; class=&quot;footer-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;TikTok&lt;/a&gt;
+      &lt;a href=&quot;#&quot; class=&quot;footer-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Instagram&lt;/a&gt;
+      &lt;a href=&quot;#&quot; class=&quot;footer-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Facebook&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;p class=&quot;footer-copy&quot;&gt;&amp;copy; 2026 You Belong. All rights reserved.&lt;/p&gt;
+
+  &lt;/footer&gt;
+
+  &lt;!--
+  NOTE: &lt;script src=&quot;script.js&quot;&gt; is placed at the BOTTOM of &lt;body&gt;.
+  This ensures HTML elements exist before JavaScript runs.
+  Never move it to &lt;head&gt; without adding the defer attribute.
+  --&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+  </div>
+
+  <!-- STYLE.CSS -->
+  <div class="code-section">
+    <div class="code-header">
+      <span class="label">🎨 style.css</span>
+      <span class="desc">All colours, fonts, spacing, and layout</span>
+      <button class="dl-btn" onclick="download('style.css', cssCode, 'text/css')">⬇ Download</button>
+    </div>
+    <pre>/*
+╔══════════════════════════════════════════════════════════════╗
+║  IMPORTANT CSS PROPERTIES — REFERENCE NOTES                 ║
+╠══════════════════════════════════════════════════════════════╣
+║  color: #hex;                  → text colour                 ║
+║  background-color: #hex;       → background fill             ║
+║  font-family: &#x27;Name&#x27;, sans;    → typeface                    ║
+║  font-size: 18px;              → text size                   ║
+║  font-weight: 700;             → boldness (400=normal)       ║
+║  padding: 16px;                → space INSIDE element        ║
+║  margin: 16px;                 → space OUTSIDE element       ║
+║  border-radius: 12px;          → rounded corners             ║
+║  border: 2px solid #hex;       → outline                     ║
+║  box-shadow: 0 4px 12px ...;   → drop shadow                 ║
+║  display: flex;                → side-by-side layout         ║
+║  display: grid;                → grid layout                 ║
+║  gap: 16px;                    → space between flex/grid     ║
+║  object-fit: cover;            → image fills its box         ║
+║  cursor: pointer;              → hand cursor on hover        ║
+║  transition: .2s ease;         → smooth animation            ║
+║                                                              ║
+║  To restyle the whole site, edit the :root variables below. ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ── DESIGN TOKENS ─────────────────────────────────────────── */
+/* Change these variables to change every colour on the site   */
+:root {
+  --cream:          #FAF7F2;   /* warm page background          */
+  --white:          #FFFFFF;
+  --accent:         #E8624A;   /* salmon / coral — main colour  */
+  --accent-hover:   #D4503A;
+  --accent-light:   #FFF0ED;   /* pale salmon for pill badges   */
+  --text:           #1A1A1A;   /* near-black headings           */
+  --text-mid:       #555555;   /* body copy                     */
+  --text-light:     #999999;   /* hints / labels                */
+  --border:         #EDE8E0;
+  --shadow:         rgba(232,98,74,.10);
+  --shadow-card:    0 4px 20px rgba(0,0,0,.07);
+  --gold:           #F5B800;   /* avatar ring colour            */
+  --footer-bg:      #252525;   /* dark footer background        */
+
+  /* Category pill colours */
+  --cat-pink-bg:    #FFE4DF;
+  --cat-pink-text:  #E8624A;
+  --cat-blue-bg:    #E0EEFF;
+  --cat-blue-text:  #3B82F6;
+  --cat-green-bg:   #DFFAEC;
+  --cat-green-text: #16A34A;
+
+  /* Community group border colours */
+  --grp-red:        #E8624A;
+  --grp-blue:       #3B82F6;
+  --grp-green:      #22C55E;
+  --grp-yellow:     #F59E0B;
+
+  --radius:         20px;
+  --radius-pill:    100px;
+  --font:           &#x27;Nunito&#x27;, &#x27;Segoe UI&#x27;, sans-serif;
+}
+
+/* ── RESET &amp; BASE ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html   { scroll-behavior: smooth; }
+body   {
+  font-family: var(--font);
+  background:  var(--cream);
+  color:       var(--text-mid);
+  font-size:   16px;
+  line-height: 1.65;
+}
+img    { display: block; max-width: 100%; }
+a      { text-decoration: none; }
+button { font-family: var(--font); cursor: pointer; }
+
+/* ── LAYOUT WRAPPER ─────────────────────────────────────────── */
+/* Centres content on wide screens while keeping it app-width  */
+main, .footer-inner {
+  max-width: 820px;
+  margin:    0 auto;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header {
+  position: sticky; top: 0; z-index: 200;
+  display:  flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  padding:   12px 20px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+/* Logo group (left) */
+.logo-group  { display: flex; align-items: center; gap: 8px; }
+
+.logo-circle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border:  2.5px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.logo-img    { width: 36px; height: 36px; }
+
+/* Cursive &quot;You Belong&quot; beside logo */
+.logo-script {
+  font-family: &#x27;Pacifico&#x27;, cursive;
+  font-size:   13px;
+  color:       var(--accent);
+  line-height: 1.2;
+}
+
+/* Centre site title — SAME STYLE used in footer too */
+.site-title {
+  font-size:   1.55rem;
+  font-weight: 900;
+  color:       var(--accent);
+  letter-spacing: .3px;
+  text-align:  center;
+  flex: 1;
+}
+
+/* Hamburger toggle button */
+.nav-toggle {
+  background: none; border: none;
+  font-size: 26px;
+  color:     var(--accent);
+  line-height: 1;
+  padding: 0 4px;
+}
+
+/* ── NAVIGATION DRAWER ──────────────────────────────────────── */
+.navbar {
+  display:    flex;
+  flex-direction: column;
+  background: #2d2d2d;
+  max-height: 0;
+  overflow:   hidden;
+  transition: max-height .35s ease;
+}
+.navbar.open { max-height: 400px; }
+
+.nav-link {
+  color:     rgba(255,255,255,.85);
+  font-size: 15px;
+  font-weight: 700;
+  padding:   14px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .18s, color .18s;
+}
+.nav-link:hover { background: var(--accent); color: var(--white); }
+
+/* ── PAGE SECTIONS ──────────────────────────────────────────── */
+.page-section {
+  max-width: 820px;
+  margin:    0 auto;
+  padding:   40px 20px;
+}
+
+.section-heading {
+  font-size:   1.75rem;
+  font-weight: 900;
+  color:       var(--text);
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  font-size:  0.95rem;
+  color:      var(--text-light);
+  margin-bottom: 28px;
+}
+
+/* ── HERO SECTION ───────────────────────────────────────────── */
+.hero-section {
+  max-width: 820px;
+  margin:    0 auto;
+  padding:   28px 20px 0;
+}
+
+/* Hero image container */
+.hero-img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 280px;
+  margin-bottom: 28px;
+}
+
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay badge on photo */
+.hero-badge {
+  position: absolute;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  color:      var(--text);
+  font-size:  14px;
+  font-weight: 700;
+  padding:    8px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  white-space: nowrap;
+}
+
+/* Hero text block */
+.hero-body   { padding-bottom: 36px; }
+
+.hero-heading {
+  font-size:   2.1rem;
+  font-weight: 900;
+  color:       var(--text);
+  line-height: 1.2;
+  margin: 14px 0 16px;
+}
+
+.hero-text {
+  font-size:  1rem;
+  color:      var(--text-mid);
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.hero-text strong { color: var(--text); }
+
+/* ── CATEGORY PILLS ─────────────────────────────────────────── */
+/* Small coloured label badges (COMMUNITY, HEALING, etc.)      */
+.cat-pill {
+  display:     inline-block;
+  font-size:   11px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  padding:     5px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.cat-pink  { background: var(--cat-pink-bg);  color: var(--cat-pink-text); }
+.cat-blue  { background: var(--cat-blue-bg);  color: var(--cat-blue-text); }
+.cat-green { background: var(--cat-green-bg); color: var(--cat-green-text);}
+
+/* ── STORY CARDS ────────────────────────────────────────────── */
+.story-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  margin-bottom: 20px;
+  overflow:      hidden;
+}
+
+.story-img-wrap {
+  position: relative;
+  height:   220px;
+}
+
+.story-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.story-body {
+  padding: 18px 20px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.story-title {
+  font-size:   1.15rem;
+  font-weight: 900;
+  color:       var(--text);
+}
+
+.story-text {
+  font-size:   0.93rem;
+  color:       var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ── THOUGHTS / JOURNAL ─────────────────────────────────────── */
+.thoughts-section { background: var(--cream); }
+
+.thoughts-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  padding:       22px;
+  box-shadow:    var(--shadow-card);
+  display:       flex;
+  flex-direction: column;
+  gap:           12px;
+}
+
+/* NOTE: &lt;textarea&gt; styles — this is how you style a text box */
+.thought-input {
+  width:   100%;
+  resize:  vertical;
+  border:  1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-family: var(--font);
+  font-size:   15px;
+  color:       var(--text);
+  background:  var(--cream);
+  outline:     none;
+  transition:  border .2s;
+}
+.thought-input:focus {
+  border-color: var(--accent);
+  box-shadow:   0 0 0 3px rgba(232,98,74,.12);
+}
+
+.save-btn  { align-self: flex-start; }
+.save-msg  {
+  font-size: 13px; font-weight: 700;
+  color: var(--accent); min-height: 16px;
+}
+
+/* ── FRIENDS GRID ───────────────────────────────────────────── */
+.friends-section { text-align: center; }
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:         16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.friend-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  padding:       18px 10px;
+  box-shadow:    var(--shadow-card);
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  gap:           6px;
+}
+
+/* Avatar circle with gold ring */
+.avatar-wrap {
+  position: relative;
+  width:  72px; height: 72px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.avatar-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.avatar-ph {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.avatar-emoji { font-size: 34px; line-height: 1; }
+
+.friend-name    { font-size: 14px; font-weight: 800; color: var(--text); }
+.friend-country { font-size: 12px; color: var(--text-light); }
+
+.see-all-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── COMMUNITY GROUPS ───────────────────────────────────────── */
+.groups-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.group-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  border:        3px solid transparent;
+  padding:       28px 16px 22px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  gap:           8px;
+  text-align:    center;
+  box-shadow:    var(--shadow-card);
+  transition:    transform .2s;
+}
+.group-card:hover { transform: translateY(-2px); }
+
+/* Coloured top borders matching the 4 group types */
+.border-red    { border-color: var(--grp-red);    }
+.border-blue   { border-color: var(--grp-blue);   }
+.border-green  { border-color: var(--grp-green);  }
+.border-yellow { border-color: var(--grp-yellow); }
+
+.group-icon { font-size: 2.2rem; margin-bottom: 4px; }
+.group-name { font-size: 1rem;   font-weight: 900; color: var(--text); }
+.group-desc { font-size: .87rem; color: var(--text-mid); line-height: 1.45; }
+
+/* ── EVENTS ─────────────────────────────────────────────────── */
+.event-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  padding:       28px 20px 24px;
+  margin-bottom: 16px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  text-align:    center;
+  gap:           10px;
+}
+
+/* Salmon date badge (the number + month block from the screenshots) */
+.event-date-badge {
+  background:    var(--accent);
+  color:         var(--white);
+  border-radius: 14px;
+  padding:       10px 18px 8px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  line-height:   1;
+  min-width:     64px;
+}
+
+.event-day   { font-size: 2rem;  font-weight: 900; }
+.event-month { font-size: .7rem; font-weight: 700; letter-spacing: 1px; }
+
+.event-name {
+  font-size:   1.1rem;
+  font-weight: 900;
+  color:       var(--text);
+}
+
+.event-desc {
+  font-size:  .93rem;
+  color:      var(--text-mid);
+  max-width:  420px;
+  line-height: 1.55;
+}
+
+.rsvp-btn { padding: 10px 32px; font-size: 14px; font-weight: 800; }
+
+/* ── SUPPORT CHAT ────────────────────────────────────────────── */
+.chat-widget {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  overflow:      hidden;
+  max-width:     600px;
+  margin:        0 auto;
+}
+
+/* Salmon header bar */
+.chat-header {
+  background:  var(--accent);
+  padding:     16px 20px;
+  display:     flex;
+  align-items: center;
+  gap:         14px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.chat-logo-circle {
+  width:  44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  border:  2px solid rgba(255,255,255,.5);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.chat-logo-img { width: 32px; height: 32px; }
+
+.chat-header-text { flex: 1; }
+
+.chat-title {
+  font-size:   1.1rem;
+  font-weight: 900;
+  color:       var(--white);
+  line-height: 1.2;
+}
+
+.chat-subtitle {
+  font-size: .85rem;
+  color:     rgba(255,255,255,.85);
+}
+
+/* Green online indicator dot */
+.online-dot {
+  width:  12px; height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  border: 2px solid rgba(255,255,255,.6);
+  flex-shrink: 0;
+}
+
+/* Chat messages area */
+.chat-messages {
+  padding:    20px 16px 12px;
+  min-height: 130px;
+  display:    flex;
+  flex-direction: column;
+  gap:        10px;
+}
+
+/* Individual message bubbles */
+.chat-bubble {
+  max-width:     80%;
+  padding:       12px 16px;
+  border-radius: 18px;
+  font-size:     .95rem;
+  line-height:   1.5;
+}
+
+.chat-bubble.received {
+  background:   var(--cream);
+  color:        var(--text);
+  border-bottom-left-radius: 4px;
+  align-self:   flex-start;
+}
+
+.chat-bubble.sent {
+  background:   var(--accent);
+  color:        var(--white);
+  border-bottom-right-radius: 4px;
+  align-self:   flex-end;
+}
+
+/* Input row */
+.chat-input-row {
+  display:     flex;
+  gap:         10px;
+  padding:     12px 16px 16px;
+  border-top:  1px solid var(--border);
+  align-items: center;
+}
+
+/* NOTE: &lt;input type=&quot;text&quot;&gt; styles — single-line text field */
+.chat-input {
+  flex: 1;
+  border:  1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 11px 18px;
+  font-family: var(--font);
+  font-size:   14px;
+  outline:     none;
+  transition:  border .2s;
+  color:       var(--text);
+}
+.chat-input:focus { border-color: var(--accent); }
+
+.chat-send-btn {
+  padding:     11px 22px;
+  font-size:   14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+/*
+  .btn-pill      → pill shape base
+  .btn-accent    → filled salmon
+  .btn-outline-pill → outlined pill (transparent bg, coloured border)
+  Colour variants: .red-btn .blue-btn .green-btn .yellow-btn
+*/
+
+.btn-pill {
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  gap:           6px;
+  border:        none;
+  border-radius: var(--radius-pill);
+  padding:       12px 28px;
+  font-size:     15px;
+  font-weight:   800;
+  transition:    background .2s, transform .15s, opacity .2s;
+}
+.btn-pill:active { transform: scale(.97); }
+
+.btn-accent {
+  background: var(--accent);
+  color:      var(--white);
+}
+.btn-accent:hover { background: var(--accent-hover); }
+
+.btn-accent:disabled {
+  background: #c4937e;
+  cursor: default;
+}
+
+.btn-outline-pill {
+  display:       inline-block;
+  border:        2px solid var(--accent);
+  border-radius: var(--radius-pill);
+  padding:       9px 22px;
+  font-size:     14px;
+  font-weight:   800;
+  color:         var(--accent);
+  background:    transparent;
+  transition:    background .2s, color .2s;
+  align-self:    flex-start;
+}
+.btn-outline-pill:hover {
+  background: var(--accent-light);
+}
+
+/* Group-specific outline button colours */
+.red-btn    { border-color: var(--grp-red);    color: var(--grp-red);    }
+.blue-btn   { border-color: var(--grp-blue);   color: var(--grp-blue);   }
+.green-btn  { border-color: var(--grp-green);  color: var(--grp-green);  }
+.yellow-btn { border-color: var(--grp-yellow); color: var(--grp-yellow); }
+
+.red-btn:hover    { background: #fff0ed; }
+.blue-btn:hover   { background: #e0eeff; }
+.green-btn:hover  { background: #dffaec; }
+.yellow-btn:hover { background: #fff8e1; }
+
+.friend-btn { font-size: 12px; padding: 6px 16px; }
+
+/* ── IMAGE PLACEHOLDER SYSTEM ───────────────────────────────── */
+/*
+  When an image is missing, the placeholder (X-box) shows instead.
+  Once you add the real image file, the X-box disappears.
+*/
+
+.real-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 2;
+}
+.real-img.loaded { opacity: 1; }
+
+/* Base placeholder box */
+.img-placeholder {
+  position:   absolute; inset: 0;
+  display:    flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0ece5;
+  border:     1.5px dashed var(--border);
+  gap:        8px;
+  overflow:   hidden;
+}
+
+/* Diagonal X lines drawn with CSS (no image needed) */
+.x-cross {
+  position: absolute; inset: 0;
+}
+.x-cross::before,
+.x-cross::after {
+  content:  &#x27;&#x27;;
+  position: absolute;
+  background: rgba(0,0,0,.12);
+  width:    140%; height: 1.5px;
+  top: 50%; left: -20%;
+  transform-origin: center;
+}
+.x-cross::before { transform: rotate(25deg); }
+.x-cross::after  { transform: rotate(-25deg); }
+
+.story-ph .x-cross::before { transform: rotate(18deg); }
+.story-ph .x-cross::after  { transform: rotate(-18deg); }
+
+.ph-label {
+  position:  relative; z-index: 1;
+  font-size: 11px;
+  color:     var(--text-light);
+  text-align: center;
+  line-height: 1.5;
+}
+.ph-label code {
+  font-size: 10px;
+  background: rgba(255,255,255,.7);
+  color:     var(--accent);
+  padding:   1px 5px;
+  border-radius: 4px;
+  display:   inline-block;
+  margin-top: 2px;
+}
+
+/* Hero placeholder */
+.hero-ph {
+  position: absolute; inset: 0;
+  border-radius: var(--radius);
+  border: none;
+}
+
+/* Story placeholder */
+.story-ph { position: absolute; inset: 0; }
+.story-img-wrap { position: relative; }
+
+/* Avatar placeholder */
+.avatar-ph {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: none;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--footer-bg);
+  padding:    40px 24px 28px;
+  margin-top: 12px;
+}
+
+/* Brand row: logo circle + script + tagline */
+.footer-brand-row {
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:   wrap;
+  gap:         12px;
+  max-width:   820px;
+  margin:      0 auto 12px;
+}
+
+.footer-logo-group {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+}
+
+.footer-logo-circle {
+  width:  46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  border:  2px solid rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.footer-logo-img { width: 32px; height: 32px; }
+
+.footer-logo-script {
+  font-family: &#x27;Pacifico&#x27;, cursive;
+  font-size:   14px;
+  color:       var(--accent);
+  line-height: 1.2;
+}
+
+.footer-tagline {
+  font-size:  .93rem;
+  color:      rgba(255,255,255,.6);
+}
+
+/* &quot;You Belong&quot; in the same salmon heading style as .site-title in header */
+.footer-site-title {
+  font-size:   1.55rem;
+  font-weight: 900;
+  color:       var(--accent);
+  letter-spacing: .3px;
+  max-width:   820px;
+  margin:      0 auto 16px;
+}
+
+/* Divider line */
+.footer-divider {
+  border:     none;
+  border-top: 1px solid rgba(255,255,255,.12);
+  margin:     0 auto 28px;
+  max-width:  820px;
+}
+
+/* Info columns */
+.footer-cols {
+  display:   grid;
+  grid-template-columns: 1fr 1fr;
+  gap:       24px;
+  max-width: 820px;
+  margin:    0 auto 28px;
+}
+
+.footer-social {
+  max-width: 820px;
+  margin:    0 auto 28px;
+  display:   flex;
+  flex-direction: column;
+  gap:       6px;
+}
+
+.footer-col        { display: flex; flex-direction: column; gap: 6px; }
+
+.footer-col-heading {
+  font-size:   15px;
+  font-weight: 800;
+  color:       var(--white);
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color:     rgba(255,255,255,.6);
+  transition: color .18s;
+  display:   inline-block;
+}
+.footer-link:hover { color: var(--white); }
+
+.footer-copy {
+  font-size: 12px;
+  color:     rgba(255,255,255,.35);
+  text-align: center;
+  max-width: 820px;
+  margin:    0 auto;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* ── SECTION CENTERING ───────────────────────────────────────── */
+.hero-section,
+.page-section { text-align: center; }
+
+.story-body,
+.event-card   { text-align: left; }
+.event-card   { align-items: center; text-align: center; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+/*
+  @media lets you change styles for smaller screens.
+  max-width: 600px → applies on phones
+*/
+
+@media (max-width: 600px) {
+  .site-title   { font-size: 1.25rem; }
+  .hero-heading { font-size: 1.7rem; }
+  .section-heading { font-size: 1.45rem; }
+
+  .friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .groups-grid  { grid-template-columns: 1fr; }
+
+  .footer-cols  { grid-template-columns: 1fr; }
+}
+</pre>
+  </div>
+
+  <!-- SCRIPT.JS -->
+  <div class="code-section">
+    <div class="code-header">
+      <span class="label">⚡ script.js</span>
+      <span class="desc">Buttons, chat, save, and all interactivity</span>
+      <button class="dl-btn" onclick="download('script.js', jsCode, 'text/javascript')">⬇ Download</button>
+    </div>
+    <pre>/*
+╔══════════════════════════════════════════════════════════════╗
+║  IMPORTANT JAVASCRIPT CONCEPTS — REFERENCE NOTES            ║
+╠══════════════════════════════════════════════════════════════╣
+║  document.getElementById(&#x27;id&#x27;)                              ║
+║    → Grabs an HTML element by its id=&quot;...&quot; attribute.       ║
+║                                                             ║
+║  element.textContent = &#x27;text&#x27;                               ║
+║    → Changes visible text inside an element.                ║
+║                                                             ║
+║  element.classList.add(&#x27;class&#x27;)                             ║
+║    → Adds a CSS class → changes the element&#x27;s style.        ║
+║                                                             ║
+║  element.classList.remove(&#x27;class&#x27;)                          ║
+║    → Removes a CSS class.                                   ║
+║                                                             ║
+║  localStorage.setItem(&#x27;key&#x27;, value)                         ║
+║    → Saves data in the browser (survives page refresh).     ║
+║                                                             ║
+║  localStorage.getItem(&#x27;key&#x27;)                                ║
+║    → Reads previously saved data.                           ║
+║                                                             ║
+║  setTimeout(function, ms)                                   ║
+║    → Runs a function after a delay (ms = milliseconds).     ║
+║                                                             ║
+║  element.scrollIntoView()                                   ║
+║    → Smoothly scrolls the page to that element.             ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ── ON PAGE LOAD ────────────────────────────────────────────── */
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function () {
+
+  /* Restore any previously saved journal thoughts */
+  var saved1 = localStorage.getItem(&#x27;yb_thought1&#x27;);
+  var saved2 = localStorage.getItem(&#x27;yb_thought2&#x27;);
+  if (saved1) document.getElementById(&#x27;thoughtInput1&#x27;).value = saved1;
+  if (saved2) document.getElementById(&#x27;thoughtInput2&#x27;).value = saved2;
+
+});
+
+/* ── NAVIGATION ──────────────────────────────────────────────── */
+/*
+  toggleNav() opens or closes the slide-down navigation drawer.
+  It adds/removes the &#x27;open&#x27; CSS class which changes max-height.
+*/
+function toggleNav() {
+  var nav = document.getElementById(&#x27;navbar&#x27;);
+  var isOpen = nav.classList.contains(&#x27;open&#x27;);
+  nav.classList.toggle(&#x27;open&#x27;);
+  nav.setAttribute(&#x27;aria-hidden&#x27;, isOpen ? &#x27;true&#x27; : &#x27;false&#x27;);
+}
+
+/* closeNav() is called when a nav link is clicked */
+function closeNav() {
+  var nav = document.getElementById(&#x27;navbar&#x27;);
+  nav.classList.remove(&#x27;open&#x27;);
+  nav.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+}
+
+/* ── IMAGE HELPERS ───────────────────────────────────────────── */
+/*
+  imgLoaded(img) → called by onload=&quot;&quot; in HTML.
+  Fades the real image in and hides the placeholder.
+
+  imgError(img) → called by onerror=&quot;&quot; in HTML.
+  Hides the broken-image icon; placeholder stays visible.
+*/
+function imgLoaded(img) {
+  img.classList.add(&#x27;loaded&#x27;);
+  var ph = img.parentElement.querySelector(&#x27;.img-placeholder&#x27;);
+  if (ph) ph.style.display = &#x27;none&#x27;;
+}
+
+function imgError(img) {
+  img.style.display = &#x27;none&#x27;;
+}
+
+/* ── JOIN COMMUNITY ──────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = &#x27;signup.html&#x27;;
+  when you have a sign-up page ready.
+*/
+function handleJoin() {
+  alert(
+    &#x27;Welcome! 🎉\n\n&#x27; +
+    &#x27;Replace this alert in script.js:\n&#x27; +
+    &#x27;  window.location.href = &quot;signup.html&quot;;&#x27;
+  );
+}
+
+/* ── READ MORE ───────────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = &#x27;story&#x27; + id + &#x27;.html&#x27;;
+*/
+function readMore(id) {
+  alert(
+    &#x27;Opening story &#x27; + id + &#x27;...\n\n&#x27; +
+    &#x27;Replace with: window.location.href = &quot;story&#x27; + id + &#x27;.html&quot;;&#x27;
+  );
+}
+
+/* ── SAVE THOUGHTS ───────────────────────────────────────────── */
+/*
+  Saves both journal textareas to browser localStorage.
+  localStorage keeps the data even after the page is refreshed.
+*/
+function saveThoughts() {
+  var t1  = document.getElementById(&#x27;thoughtInput1&#x27;).value;
+  var t2  = document.getElementById(&#x27;thoughtInput2&#x27;).value;
+  var msg = document.getElementById(&#x27;saveMsg&#x27;);
+
+  if (!t1.trim() &amp;&amp; !t2.trim()) {
+    msg.textContent  = &#x27;Write something first!&#x27;;
+    msg.style.color  = &#x27;#999&#x27;;
+    clearAfter(msg, 2500);
+    return;
+  }
+
+  localStorage.setItem(&#x27;yb_thought1&#x27;, t1);
+  localStorage.setItem(&#x27;yb_thought2&#x27;, t2);
+
+  msg.textContent = &#x27;✓ Saved!&#x27;;
+  msg.style.color = &#x27;var(--accent)&#x27;;
+  clearAfter(msg, 3000);
+}
+
+function clearAfter(el, ms) {
+  setTimeout(function () { el.textContent = &#x27;&#x27;; }, ms);
+}
+
+/* ── ADD FRIEND ──────────────────────────────────────────────── */
+/*
+  Toggles a friend card button between &quot;+ Add&quot; and &quot;✓ Added&quot;.
+  The button becomes disabled after clicking so it can&#x27;t be
+  clicked again accidentally.
+
+  ► In a real app, replace the console.log with an API call
+  that sends a friend request to your backend.
+*/
+function addFriend(button, name) {
+  if (button.disabled) return;
+
+  button.textContent = &#x27;✓ Added&#x27;;
+  button.classList.add(&#x27;added&#x27;);
+  button.style.background    = &#x27;var(--accent-light)&#x27;;
+  button.style.borderColor   = &#x27;var(--accent)&#x27;;
+  button.style.color         = &#x27;var(--accent)&#x27;;
+  button.disabled            = true;
+
+  /* ► Replace this with a real API call when your backend is ready */
+  console.log(&#x27;Friend request sent to: &#x27; + name);
+}
+
+/* ── SEE ALL FRIENDS ─────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = &#x27;friends.html&#x27;;
+*/
+function seeAllFriends() {
+  alert(
+    &#x27;Opening all friends...\n\n&#x27; +
+    &#x27;Replace with: window.location.href = &quot;friends.html&quot;;&#x27;
+  );
+}
+
+/* ── JOIN GROUP ──────────────────────────────────────────────── */
+/*
+  Changes the &quot;Join Group&quot; button to &quot;✓ Joined&quot; when clicked.
+  ► In a real app, replace console.log with an API request.
+*/
+function joinGroup(button, groupName) {
+  if (button.disabled) return;
+
+  button.textContent = &#x27;✓ Joined!&#x27;;
+  button.disabled    = true;
+  button.style.opacity = &#x27;.7&#x27;;
+
+  /* ► Replace this with a real join API call */
+  console.log(&#x27;Joined group: &#x27; + groupName);
+}
+
+/* ── RSVP (EVENTS) ───────────────────────────────────────────── */
+/*
+  Marks the RSVP button as confirmed.
+  ► Replace console.log with an API call to register the user.
+*/
+function rsvp(button, eventName) {
+  if (button.disabled) return;
+
+  button.textContent = &#x27;✓ You\&#x27;re in!&#x27;;
+  button.disabled    = true;
+  button.style.background = &#x27;#c0392b&#x27;;
+
+  /* ► Replace with a real RSVP API call */
+  console.log(&#x27;RSVP confirmed for: &#x27; + eventName);
+}
+
+/* ── SUPPORT CHAT ────────────────────────────────────────────── */
+/*
+  sendMessage() reads the chat input, adds the user&#x27;s message
+  as a bubble on the right, then adds an auto-reply after a
+  short delay.
+
+  Auto-replies are chosen randomly from the replies array.
+  ► Replace the replies array with real responses, or connect
+    this function to an actual chat / AI API.
+*/
+var chatReplies = [
+  &#x27;Thank you for sharing that with us. ❤️&#x27;,
+  &#x27;We\&#x27;re so glad you\&#x27;re here!&#x27;,
+  &#x27;You\&#x27;re not alone — our community is here for you. 🌍&#x27;,
+  &#x27;That takes courage to share. We appreciate you.&#x27;,
+  &#x27;We hear you. Would you like to connect with a community group?&#x27;,
+  &#x27;You belong here, always. 💛&#x27;
+];
+
+function sendMessage() {
+  var input    = document.getElementById(&#x27;chatInput&#x27;);
+  var messages = document.getElementById(&#x27;chatMessages&#x27;);
+  var text     = input.value.trim();
+
+  if (!text) return;
+
+  /* Add the user&#x27;s message (right-aligned bubble) */
+  var userBubble       = document.createElement(&#x27;div&#x27;);
+  userBubble.className = &#x27;chat-bubble sent&#x27;;
+  userBubble.textContent = text;
+  messages.appendChild(userBubble);
+
+  /* Clear input */
+  input.value = &#x27;&#x27;;
+
+  /* Scroll to bottom of chat */
+  messages.scrollTop = messages.scrollHeight;
+
+  /* Send an auto-reply after a short delay */
+  setTimeout(function () {
+    var reply       = chatReplies[Math.floor(Math.random() * chatReplies.length)];
+    var replyBubble       = document.createElement(&#x27;div&#x27;);
+    replyBubble.className = &#x27;chat-bubble received&#x27;;
+    replyBubble.textContent = reply;
+    messages.appendChild(replyBubble);
+    messages.scrollTop = messages.scrollHeight;
+  }, 900);
+}
+</pre>
+  </div>
+
+  <footer>You Belong &copy; 2026 — open index.html in any browser to see your site</footer>
+
+</div>
+
+<script>
+var indexCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Belong</title>
+  <link rel="stylesheet" href="style.css">
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  IMPORTANT HTML TAGS — QUICK REFERENCE                      ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  <img src="images/file.jpg" alt="description">              ║
+  ║    → Adds a photo. src= is the file path.                   ║
+  ║    → alt= describes it (required for accessibility).        ║
+  ║    → ALWAYS write something in alt="..."                    ║
+  ║                                                             ║
+  ║  <a href="https://...">Link text</a>                        ║
+  ║    → Clickable link.                                        ║
+  ║    → href="mailto:you@email.com" opens email app.           ║
+  ║    → href="tel:12345" dials on mobile.                      ║
+  ║    → target="_blank" opens in a new tab.                    ║
+  ║                                                             ║
+  ║  <button onclick="functionName()">Label</button>            ║
+  ║    → Runs JavaScript when clicked.                          ║
+  ║                                                             ║
+  ║  <textarea placeholder="hint..."></textarea>                ║
+  ║    → Multi-line text input.                                 ║
+  ║                                                             ║
+  ║  <input type="text" placeholder="hint...">                  ║
+  ║    → Single-line text field.                                ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       STICKY HEADER — stays visible while scrolling
+       ══════════════════════════════════════════════ -->
+  <header class="header">
+
+    <!-- LOGO (left)
+         ► To use your own logo image:
+           1. Save it as images/logo.svg (or .png/.jpg)
+           2. Change src= to match your filename
+           3. Update alt= with a short description     -->
+    <div class="logo-group">
+      <div class="logo-circle">
+        <img src="images/logo.svg"
+             alt="You Belong — hands reaching together"
+             class="logo-img">
+      </div>
+      <span class="logo-script">You<br>Belong</span>
+    </div>
+
+    <!-- SITE TITLE (centre) — salmon bold heading
+         This same style appears in the footer too    -->
+    <h1 class="site-title">You Belong</h1>
+
+    <!-- HAMBURGER BUTTON — opens the nav on mobile  -->
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open navigation">
+      &#9776;
+    </button>
+
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION DRAWER
+       Slides down when the ☰ button is clicked.
+       ► Change href="#section-id" to link to pages.
+       ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-hidden="true">
+    <a href="#hero"    class="nav-link" onclick="closeNav()">Home</a>
+    <a href="#groups"  class="nav-link" onclick="closeNav()">Community Groups</a>
+    <a href="#stories" class="nav-link" onclick="closeNav()">Stories</a>
+    <a href="#events"  class="nav-link" onclick="closeNav()">Events</a>
+    <a href="#support" class="nav-link" onclick="closeNav()">Support Chat</a>
+    <a href="#profile" class="nav-link" onclick="closeNav()">Profile</a>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════
+         HERO SECTION
+         ══════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
+
+      <!-- HERO IMAGE
+           ► Replace src= with your own photo.
+           ► Recommended size: 800 × 600 px or larger.
+           ► Placeholder X-box shows until image is added. -->
+      <div class="hero-img-wrap">
+        <img src="images/hero.jpg"
+             alt="Diverse children celebrating belonging together"
+             class="hero-img real-img"
+             onload="imgLoaded(this)" onerror="imgError(this)">
+        <div class="img-placeholder hero-ph">
+          <div class="x-cross"></div>
+          <p class="ph-label">Hero Image<br><code>images/hero.jpg</code><br>800 × 600 px</p>
+        </div>
+        <!-- Overlay badge on top of the photo -->
+        <div class="hero-badge">&#127760; Everyone Welcome</div>
+      </div>
+
+      <!-- HERO TEXT
+           ► Replace the pill label, heading, body text, and button. -->
+      <div class="hero-body">
+        <span class="cat-pill cat-pink">Third Culture Kids (TCKs)</span>
+
+        <h2 class="hero-heading">
+          We Are Here<br>
+          <span class="accent">For You</span> &#128155;
+        </h2>
+
+        <p class="hero-text">
+          Being a Third Culture Kid can sometimes feel confusing — like you belong
+          everywhere and nowhere at the same time. But <strong>you are not alone.</strong>
+          Every story, culture, and experience you carry makes you unique and strong.
+          Together, we can support one another, celebrate our differences, and find a
+          place where we truly belong.
+        </p>
+
+        <button class="btn-pill btn-accent" onclick="handleJoin()">Join Our Community</button>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         OUR STORIES
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="stories">
+
+      <h2 class="section-heading">Our <span class="accent">Stories</span></h2>
+      <p class="section-sub">Real stories from real people. Find one that speaks to you.</p>
+
+      <!-- STORY CARD 1
+           ► Replace src= with your image (800 × 450 px recommended).
+           ► Replace category pill, title, and description text.        -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story1.jpg"
+               alt="Children in traditional cultural dress"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 1 Image<br><code>images/story1.jpg</code></p>
+          </div>
+        </div>
+        <div class="story-body">
+          <span class="cat-pill cat-pink">COMMUNITY</span>
+          <h3 class="story-title">Finding Strength in Community</h3>
+          <p class="story-text">Sometimes life feels easier when we know people understand us.
+            In this story, friendship and support help turn loneliness into strength.
+            By connecting with others who share similar experiences, we learn that
+            community can give us courage, comfort, and confidence.</p>
+          <button class="btn-outline-pill" onclick="readMore(1)">Read More</button>
+        </div>
+      </article>
+
+      <!-- STORY CARD 2 -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story2.jpg"
+               alt="Young people wrapped in country flags"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 2 Image<br><code>images/story2.jpg</code></p>
+          </div>
+        </div>
+        <div class="story-body">
+          <span class="cat-pill cat-blue">HEALING</span>
+          <h3 class="story-title">A Journey of Healing and Hope</h3>
+          <p class="story-text">Healing takes time, but every step forward matters. This story
+            shows how challenges can help us grow stronger and discover hope even in difficult
+            moments. With patience, support, and belief in ourselves, brighter days can always
+            be found ahead.</p>
+          <button class="btn-outline-pill" onclick="readMore(2)">Read More</button>
+        </div>
+      </article>
+
+      <!-- STORY CARD 3 -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story3.jpg"
+               alt="Children from different cultures hugging"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 3 Image<br><code>images/story3.jpg</code></p>
+          </div>
+        </div>
+        <div class="story-body">
+          <span class="cat-pill cat-green">UNITY</span>
+          <h3 class="story-title">Together We Are Stronger</h3>
+          <p class="story-text">No one has to face life's struggles alone. When people come
+            together, they can overcome challenges, inspire one another, and create positive
+            change. This story reminds us that teamwork, kindness, and unity make us stronger
+            than we could ever be on our own.</p>
+          <button class="btn-outline-pill" onclick="readMore(3)">Read More</button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SHARE YOUR THOUGHTS
+         ══════════════════════════════════════════ -->
+    <section class="page-section thoughts-section">
+
+      <h2 class="section-heading">Share Your <span class="accent">Thoughts</span> &#9998;&#65039;</h2>
+      <p class="section-sub">Write your thoughts here...</p>
+
+      <div class="thoughts-card">
+        <!-- NOTE: <textarea> creates a multi-line text box.
+             placeholder= shows hint text when the box is empty.
+             ► Change the placeholder to anything you like.       -->
+        <textarea id="thoughtInput1"
+                  class="thought-input"
+                  rows="3"
+                  placeholder="Today I felt..."
+                  aria-label="How are you feeling today?"></textarea>
+
+        <textarea id="thoughtInput2"
+                  class="thought-input"
+                  rows="4"
+                  placeholder="My story is..."
+                  aria-label="Share your story"></textarea>
+
+        <!-- ► onclick="saveThoughts()" runs the save function in script.js -->
+        <button class="btn-pill btn-accent save-btn" onclick="saveThoughts()">
+          &#128190; Save
+        </button>
+        <p id="saveMsg" class="save-msg" aria-live="polite"></p>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         YOUR FRIENDS
+         ══════════════════════════════════════════ -->
+    <section class="page-section friends-section">
+
+      <h2 class="section-heading">Your <span class="accent">Friends</span> &#127760;</h2>
+      <p class="section-sub">People from around the world in your circle.</p>
+
+      <div class="friends-grid">
+
+        <!-- FRIEND CARD
+             ► To add a real profile photo:
+               1. Put it in images/ (e.g. images/friend1.jpg)
+               2. The <img> tag loads it; emoji hides automatically
+             ► Replace name, flag emoji, and country for each card. -->
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend1.jpg" alt="Amara" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127998;</span>
+            </div>
+          </div>
+          <p class="friend-name">Amara</p>
+          <p class="friend-country">&#127468;&#127469; Ghana</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Amara')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend2.jpg" alt="Yuki" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128102;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Yuki</p>
+          <p class="friend-country">&#127471;&#127477; Japan</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Yuki')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend3.jpg" alt="Lena" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128103;&#127995;</span>
+            </div>
+          </div>
+          <p class="friend-name">Lena</p>
+          <p class="friend-country">&#127465;&#127466; Germany</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Lena')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend4.jpg" alt="Carlos" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128102;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Carlos</p>
+          <p class="friend-country">&#127474;&#127485; Mexico</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Carlos')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend5.jpg" alt="Priya" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Priya</p>
+          <p class="friend-country">&#127470;&#127475; India</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Priya')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend6.jpg" alt="Sofia" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127996;</span>
+            </div>
+          </div>
+          <p class="friend-name">Sofia</p>
+          <p class="friend-country">&#127463;&#127479; Brazil</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Sofia')">+ Add</button>
+        </div>
+
+      </div>
+
+      <button class="btn-pill btn-accent see-all-btn" onclick="seeAllFriends()">
+        See All Friends
+      </button>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         COMMUNITY GROUPS
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="groups">
+
+      <h2 class="section-heading">Community <span class="accent">Groups</span> &#129309;</h2>
+      <p class="section-sub">Find your people. Join a group that feels like home.</p>
+
+      <div class="groups-grid">
+
+        <!-- GROUP CARD
+             Each card has a coloured border (border-red/blue/green/yellow).
+             ► Replace emoji, name, and description for each group.        -->
+
+        <div class="group-card border-red">
+          <span class="group-icon">&#127760;</span>
+          <h3 class="group-name">Global Roots</h3>
+          <p class="group-desc">For those who call multiple countries home.</p>
+          <button class="btn-outline-pill red-btn" onclick="joinGroup(this,'Global Roots')">Join Group</button>
+        </div>
+
+        <div class="group-card border-blue">
+          <span class="group-icon">&#127912;</span>
+          <h3 class="group-name">Creative Cultures</h3>
+          <p class="group-desc">Art, music and dance from every corner of the world.</p>
+          <button class="btn-outline-pill blue-btn" onclick="joinGroup(this,'Creative Cultures')">Join Group</button>
+        </div>
+
+        <div class="group-card border-green">
+          <span class="group-icon">&#128218;</span>
+          <h3 class="group-name">Young Explorers</h3>
+          <p class="group-desc">A safe space for kids discovering who they are.</p>
+          <button class="btn-outline-pill green-btn" onclick="joinGroup(this,'Young Explorers')">Join Group</button>
+        </div>
+
+        <div class="group-card border-yellow">
+          <span class="group-icon">&#128172;</span>
+          <h3 class="group-name">Language Swap</h3>
+          <p class="group-desc">Learn a new language from a new friend.</p>
+          <button class="btn-outline-pill yellow-btn" onclick="joinGroup(this,'Language Swap')">Join Group</button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         UPCOMING EVENTS
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="events">
+
+      <h2 class="section-heading">Upcoming <span class="accent">Events</span> &#128197;</h2>
+      <p class="section-sub">Meet up, learn, and celebrate together.</p>
+
+      <!-- EVENT CARD
+           ► Replace the date (day + month), event name, and description.
+           ► The salmon date badge is styled purely with CSS — no image needed. -->
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">14</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <!-- ► Replace event name -->
+        <h3 class="event-name">Global Culture Day</h3>
+        <!-- ► Replace event description -->
+        <p class="event-desc">Celebrate the colours of the world with food, music and dance.
+          Open to all ages.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Global Culture Day')">RSVP</button>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">21</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <h3 class="event-name">Story Circle for Kids</h3>
+        <p class="event-desc">Children share stories from their home countries in a safe and
+          fun environment.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Story Circle for Kids')">RSVP</button>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">5</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <h3 class="event-name">Unity Walk</h3>
+        <p class="event-desc">A community walk celebrating togetherness and belonging.
+          All welcome.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Unity Walk')">RSVP</button>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SUPPORT CHAT
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="support">
+
+      <div class="chat-widget">
+
+        <!-- Chat header — salmon background -->
+        <div class="chat-header">
+          <div class="chat-logo-circle">
+            <img src="images/logo.svg" alt="You Belong" class="chat-logo-img">
+          </div>
+          <div class="chat-header-text">
+            <h3 class="chat-title">Support Chat</h3>
+            <p class="chat-subtitle">We're here for you, always &#128155;</p>
+          </div>
+          <!-- Green dot = online indicator -->
+          <span class="online-dot" title="Online"></span>
+        </div>
+
+        <!-- Message area — messages appear here via JavaScript -->
+        <div class="chat-messages" id="chatMessages">
+          <!-- Opening message from the site -->
+          <div class="chat-bubble received">
+            Hi! &#128075; Welcome to You Belong. How are you feeling today?
+          </div>
+        </div>
+
+        <!-- Input row
+             NOTE: onkeydown="if(event.key==='Enter')sendMessage()"
+                   → pressing Enter triggers the send function.       -->
+        <div class="chat-input-row">
+          <input type="text"
+                 id="chatInput"
+                 class="chat-input"
+                 placeholder="Type a message..."
+                 aria-label="Type your message"
+                 onkeydown="if(event.key==='Enter')sendMessage()">
+          <button class="btn-pill btn-accent chat-send-btn"
+                  onclick="sendMessage()">Send</button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER — dark background
+       "You Belong" appears here in the same salmon
+       heading style as the top of the page.
+       ══════════════════════════════════════════════ -->
+  <footer class="footer">
+
+    <!-- Brand row: logo + "You Belong" title + tagline -->
+    <div class="footer-brand-row">
+      <div class="footer-logo-group">
+        <div class="footer-logo-circle">
+          <img src="images/logo.svg" alt="You Belong logo" class="footer-logo-img">
+        </div>
+        <!-- "You Belong" in the same salmon heading style as the header title
+             ► This is what the user asked for: same style as the heading -->
+        <span class="footer-logo-script">You<br>Belong</span>
+      </div>
+      <p class="footer-tagline">A community for everyone, everywhere.</p>
+    </div>
+
+    <!-- "You Belong" heading — same salmon bold style as site title in header -->
+    <p class="footer-site-title">You Belong</p>
+
+    <hr class="footer-divider">
+
+    <!-- Info columns -->
+    <div class="footer-cols">
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Contact Us</h4>
+        <!-- NOTE: href="mailto:..." opens the user's email app -->
+        <!-- ► Replace with your real email -->
+        <a href="mailto:hello@youbelong.com" class="footer-link">hello@youbelong.com</a>
+        <!-- NOTE: href="tel:..." dials on mobile -->
+        <!-- ► Replace with your real phone -->
+        <a href="tel:1234676767"             class="footer-link">123-467-67-67</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Need Help?</h4>
+        <!-- ► Replace # with your help page URL -->
+        <a href="#" class="footer-link">Visit our Help Centre</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Use</a>
+      </div>
+
+    </div>
+
+    <div class="footer-social">
+      <h4 class="footer-col-heading">Follow Us</h4>
+      <!-- NOTE: target="_blank" opens social links in a new tab -->
+      <!-- ► Replace # with your real social URLs -->
+      <a href="#" class="footer-link" target="_blank" rel="noopener">TikTok</a>
+      <a href="#" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <p class="footer-copy">&copy; 2026 You Belong. All rights reserved.</p>
+
+  </footer>
+
+  <!--
+  NOTE: <script src="script.js"> is placed at the BOTTOM of <body>.
+  This ensures HTML elements exist before JavaScript runs.
+  Never move it to <head> without adding the defer attribute.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+`;
+var cssCode   = `/*
+╔══════════════════════════════════════════════════════════════╗
+║  IMPORTANT CSS PROPERTIES — REFERENCE NOTES                 ║
+╠══════════════════════════════════════════════════════════════╣
+║  color: #hex;                  → text colour                 ║
+║  background-color: #hex;       → background fill             ║
+║  font-family: 'Name', sans;    → typeface                    ║
+║  font-size: 18px;              → text size                   ║
+║  font-weight: 700;             → boldness (400=normal)       ║
+║  padding: 16px;                → space INSIDE element        ║
+║  margin: 16px;                 → space OUTSIDE element       ║
+║  border-radius: 12px;          → rounded corners             ║
+║  border: 2px solid #hex;       → outline                     ║
+║  box-shadow: 0 4px 12px ...;   → drop shadow                 ║
+║  display: flex;                → side-by-side layout         ║
+║  display: grid;                → grid layout                 ║
+║  gap: 16px;                    → space between flex/grid     ║
+║  object-fit: cover;            → image fills its box         ║
+║  cursor: pointer;              → hand cursor on hover        ║
+║  transition: .2s ease;         → smooth animation            ║
+║                                                              ║
+║  To restyle the whole site, edit the :root variables below. ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ── DESIGN TOKENS ─────────────────────────────────────────── */
+/* Change these variables to change every colour on the site   */
+:root {
+  --cream:          #FAF7F2;   /* warm page background          */
+  --white:          #FFFFFF;
+  --accent:         #E8624A;   /* salmon / coral — main colour  */
+  --accent-hover:   #D4503A;
+  --accent-light:   #FFF0ED;   /* pale salmon for pill badges   */
+  --text:           #1A1A1A;   /* near-black headings           */
+  --text-mid:       #555555;   /* body copy                     */
+  --text-light:     #999999;   /* hints / labels                */
+  --border:         #EDE8E0;
+  --shadow:         rgba(232,98,74,.10);
+  --shadow-card:    0 4px 20px rgba(0,0,0,.07);
+  --gold:           #F5B800;   /* avatar ring colour            */
+  --footer-bg:      #252525;   /* dark footer background        */
+
+  /* Category pill colours */
+  --cat-pink-bg:    #FFE4DF;
+  --cat-pink-text:  #E8624A;
+  --cat-blue-bg:    #E0EEFF;
+  --cat-blue-text:  #3B82F6;
+  --cat-green-bg:   #DFFAEC;
+  --cat-green-text: #16A34A;
+
+  /* Community group border colours */
+  --grp-red:        #E8624A;
+  --grp-blue:       #3B82F6;
+  --grp-green:      #22C55E;
+  --grp-yellow:     #F59E0B;
+
+  --radius:         20px;
+  --radius-pill:    100px;
+  --font:           'Nunito', 'Segoe UI', sans-serif;
+}
+
+/* ── RESET & BASE ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html   { scroll-behavior: smooth; }
+body   {
+  font-family: var(--font);
+  background:  var(--cream);
+  color:       var(--text-mid);
+  font-size:   16px;
+  line-height: 1.65;
+}
+img    { display: block; max-width: 100%; }
+a      { text-decoration: none; }
+button { font-family: var(--font); cursor: pointer; }
+
+/* ── LAYOUT WRAPPER ─────────────────────────────────────────── */
+/* Centres content on wide screens while keeping it app-width  */
+main, .footer-inner {
+  max-width: 820px;
+  margin:    0 auto;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header {
+  position: sticky; top: 0; z-index: 200;
+  display:  flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  padding:   12px 20px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+
+/* Logo group (left) */
+.logo-group  { display: flex; align-items: center; gap: 8px; }
+
+.logo-circle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border:  2.5px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.logo-img    { width: 36px; height: 36px; }
+
+/* Cursive "You Belong" beside logo */
+.logo-script {
+  font-family: 'Pacifico', cursive;
+  font-size:   13px;
+  color:       var(--accent);
+  line-height: 1.2;
+}
+
+/* Centre site title — SAME STYLE used in footer too */
+.site-title {
+  font-size:   1.55rem;
+  font-weight: 900;
+  color:       var(--accent);
+  letter-spacing: .3px;
+  text-align:  center;
+  flex: 1;
+}
+
+/* Hamburger toggle button */
+.nav-toggle {
+  background: none; border: none;
+  font-size: 26px;
+  color:     var(--accent);
+  line-height: 1;
+  padding: 0 4px;
+}
+
+/* ── NAVIGATION DRAWER ──────────────────────────────────────── */
+.navbar {
+  display:    flex;
+  flex-direction: column;
+  background: #2d2d2d;
+  max-height: 0;
+  overflow:   hidden;
+  transition: max-height .35s ease;
+}
+.navbar.open { max-height: 400px; }
+
+.nav-link {
+  color:     rgba(255,255,255,.85);
+  font-size: 15px;
+  font-weight: 700;
+  padding:   14px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .18s, color .18s;
+}
+.nav-link:hover { background: var(--accent); color: var(--white); }
+
+/* ── PAGE SECTIONS ──────────────────────────────────────────── */
+.page-section {
+  max-width: 820px;
+  margin:    0 auto;
+  padding:   40px 20px;
+}
+
+.section-heading {
+  font-size:   1.75rem;
+  font-weight: 900;
+  color:       var(--text);
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  font-size:  0.95rem;
+  color:      var(--text-light);
+  margin-bottom: 28px;
+}
+
+/* ── HERO SECTION ───────────────────────────────────────────── */
+.hero-section {
+  max-width: 820px;
+  margin:    0 auto;
+  padding:   28px 20px 0;
+}
+
+/* Hero image container */
+.hero-img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 280px;
+  margin-bottom: 28px;
+}
+
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay badge on photo */
+.hero-badge {
+  position: absolute;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  color:      var(--text);
+  font-size:  14px;
+  font-weight: 700;
+  padding:    8px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  white-space: nowrap;
+}
+
+/* Hero text block */
+.hero-body   { padding-bottom: 36px; }
+
+.hero-heading {
+  font-size:   2.1rem;
+  font-weight: 900;
+  color:       var(--text);
+  line-height: 1.2;
+  margin: 14px 0 16px;
+}
+
+.hero-text {
+  font-size:  1rem;
+  color:      var(--text-mid);
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.hero-text strong { color: var(--text); }
+
+/* ── CATEGORY PILLS ─────────────────────────────────────────── */
+/* Small coloured label badges (COMMUNITY, HEALING, etc.)      */
+.cat-pill {
+  display:     inline-block;
+  font-size:   11px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  padding:     5px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.cat-pink  { background: var(--cat-pink-bg);  color: var(--cat-pink-text); }
+.cat-blue  { background: var(--cat-blue-bg);  color: var(--cat-blue-text); }
+.cat-green { background: var(--cat-green-bg); color: var(--cat-green-text);}
+
+/* ── STORY CARDS ────────────────────────────────────────────── */
+.story-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  margin-bottom: 20px;
+  overflow:      hidden;
+}
+
+.story-img-wrap {
+  position: relative;
+  height:   220px;
+}
+
+.story-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.story-body {
+  padding: 18px 20px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.story-title {
+  font-size:   1.15rem;
+  font-weight: 900;
+  color:       var(--text);
+}
+
+.story-text {
+  font-size:   0.93rem;
+  color:       var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ── THOUGHTS / JOURNAL ─────────────────────────────────────── */
+.thoughts-section { background: var(--cream); }
+
+.thoughts-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  padding:       22px;
+  box-shadow:    var(--shadow-card);
+  display:       flex;
+  flex-direction: column;
+  gap:           12px;
+}
+
+/* NOTE: <textarea> styles — this is how you style a text box */
+.thought-input {
+  width:   100%;
+  resize:  vertical;
+  border:  1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-family: var(--font);
+  font-size:   15px;
+  color:       var(--text);
+  background:  var(--cream);
+  outline:     none;
+  transition:  border .2s;
+}
+.thought-input:focus {
+  border-color: var(--accent);
+  box-shadow:   0 0 0 3px rgba(232,98,74,.12);
+}
+
+.save-btn  { align-self: flex-start; }
+.save-msg  {
+  font-size: 13px; font-weight: 700;
+  color: var(--accent); min-height: 16px;
+}
+
+/* ── FRIENDS GRID ───────────────────────────────────────────── */
+.friends-section { text-align: center; }
+
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:         16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.friend-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  padding:       18px 10px;
+  box-shadow:    var(--shadow-card);
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  gap:           6px;
+}
+
+/* Avatar circle with gold ring */
+.avatar-wrap {
+  position: relative;
+  width:  72px; height: 72px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.avatar-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.avatar-ph {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+}
+.avatar-emoji { font-size: 34px; line-height: 1; }
+
+.friend-name    { font-size: 14px; font-weight: 800; color: var(--text); }
+.friend-country { font-size: 12px; color: var(--text-light); }
+
+.see-all-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── COMMUNITY GROUPS ───────────────────────────────────────── */
+.groups-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.group-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  border:        3px solid transparent;
+  padding:       28px 16px 22px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  gap:           8px;
+  text-align:    center;
+  box-shadow:    var(--shadow-card);
+  transition:    transform .2s;
+}
+.group-card:hover { transform: translateY(-2px); }
+
+/* Coloured top borders matching the 4 group types */
+.border-red    { border-color: var(--grp-red);    }
+.border-blue   { border-color: var(--grp-blue);   }
+.border-green  { border-color: var(--grp-green);  }
+.border-yellow { border-color: var(--grp-yellow); }
+
+.group-icon { font-size: 2.2rem; margin-bottom: 4px; }
+.group-name { font-size: 1rem;   font-weight: 900; color: var(--text); }
+.group-desc { font-size: .87rem; color: var(--text-mid); line-height: 1.45; }
+
+/* ── EVENTS ─────────────────────────────────────────────────── */
+.event-card {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  padding:       28px 20px 24px;
+  margin-bottom: 16px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  text-align:    center;
+  gap:           10px;
+}
+
+/* Salmon date badge (the number + month block from the screenshots) */
+.event-date-badge {
+  background:    var(--accent);
+  color:         var(--white);
+  border-radius: 14px;
+  padding:       10px 18px 8px;
+  display:       flex;
+  flex-direction: column;
+  align-items:   center;
+  line-height:   1;
+  min-width:     64px;
+}
+
+.event-day   { font-size: 2rem;  font-weight: 900; }
+.event-month { font-size: .7rem; font-weight: 700; letter-spacing: 1px; }
+
+.event-name {
+  font-size:   1.1rem;
+  font-weight: 900;
+  color:       var(--text);
+}
+
+.event-desc {
+  font-size:  .93rem;
+  color:      var(--text-mid);
+  max-width:  420px;
+  line-height: 1.55;
+}
+
+.rsvp-btn { padding: 10px 32px; font-size: 14px; font-weight: 800; }
+
+/* ── SUPPORT CHAT ────────────────────────────────────────────── */
+.chat-widget {
+  background:    var(--white);
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow-card);
+  overflow:      hidden;
+  max-width:     600px;
+  margin:        0 auto;
+}
+
+/* Salmon header bar */
+.chat-header {
+  background:  var(--accent);
+  padding:     16px 20px;
+  display:     flex;
+  align-items: center;
+  gap:         14px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.chat-logo-circle {
+  width:  44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  border:  2px solid rgba(255,255,255,.5);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.chat-logo-img { width: 32px; height: 32px; }
+
+.chat-header-text { flex: 1; }
+
+.chat-title {
+  font-size:   1.1rem;
+  font-weight: 900;
+  color:       var(--white);
+  line-height: 1.2;
+}
+
+.chat-subtitle {
+  font-size: .85rem;
+  color:     rgba(255,255,255,.85);
+}
+
+/* Green online indicator dot */
+.online-dot {
+  width:  12px; height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  border: 2px solid rgba(255,255,255,.6);
+  flex-shrink: 0;
+}
+
+/* Chat messages area */
+.chat-messages {
+  padding:    20px 16px 12px;
+  min-height: 130px;
+  display:    flex;
+  flex-direction: column;
+  gap:        10px;
+}
+
+/* Individual message bubbles */
+.chat-bubble {
+  max-width:     80%;
+  padding:       12px 16px;
+  border-radius: 18px;
+  font-size:     .95rem;
+  line-height:   1.5;
+}
+
+.chat-bubble.received {
+  background:   var(--cream);
+  color:        var(--text);
+  border-bottom-left-radius: 4px;
+  align-self:   flex-start;
+}
+
+.chat-bubble.sent {
+  background:   var(--accent);
+  color:        var(--white);
+  border-bottom-right-radius: 4px;
+  align-self:   flex-end;
+}
+
+/* Input row */
+.chat-input-row {
+  display:     flex;
+  gap:         10px;
+  padding:     12px 16px 16px;
+  border-top:  1px solid var(--border);
+  align-items: center;
+}
+
+/* NOTE: <input type="text"> styles — single-line text field */
+.chat-input {
+  flex: 1;
+  border:  1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 11px 18px;
+  font-family: var(--font);
+  font-size:   14px;
+  outline:     none;
+  transition:  border .2s;
+  color:       var(--text);
+}
+.chat-input:focus { border-color: var(--accent); }
+
+.chat-send-btn {
+  padding:     11px 22px;
+  font-size:   14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+/*
+  .btn-pill      → pill shape base
+  .btn-accent    → filled salmon
+  .btn-outline-pill → outlined pill (transparent bg, coloured border)
+  Colour variants: .red-btn .blue-btn .green-btn .yellow-btn
+*/
+
+.btn-pill {
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  gap:           6px;
+  border:        none;
+  border-radius: var(--radius-pill);
+  padding:       12px 28px;
+  font-size:     15px;
+  font-weight:   800;
+  transition:    background .2s, transform .15s, opacity .2s;
+}
+.btn-pill:active { transform: scale(.97); }
+
+.btn-accent {
+  background: var(--accent);
+  color:      var(--white);
+}
+.btn-accent:hover { background: var(--accent-hover); }
+
+.btn-accent:disabled {
+  background: #c4937e;
+  cursor: default;
+}
+
+.btn-outline-pill {
+  display:       inline-block;
+  border:        2px solid var(--accent);
+  border-radius: var(--radius-pill);
+  padding:       9px 22px;
+  font-size:     14px;
+  font-weight:   800;
+  color:         var(--accent);
+  background:    transparent;
+  transition:    background .2s, color .2s;
+  align-self:    flex-start;
+}
+.btn-outline-pill:hover {
+  background: var(--accent-light);
+}
+
+/* Group-specific outline button colours */
+.red-btn    { border-color: var(--grp-red);    color: var(--grp-red);    }
+.blue-btn   { border-color: var(--grp-blue);   color: var(--grp-blue);   }
+.green-btn  { border-color: var(--grp-green);  color: var(--grp-green);  }
+.yellow-btn { border-color: var(--grp-yellow); color: var(--grp-yellow); }
+
+.red-btn:hover    { background: #fff0ed; }
+.blue-btn:hover   { background: #e0eeff; }
+.green-btn:hover  { background: #dffaec; }
+.yellow-btn:hover { background: #fff8e1; }
+
+.friend-btn { font-size: 12px; padding: 6px 16px; }
+
+/* ── IMAGE PLACEHOLDER SYSTEM ───────────────────────────────── */
+/*
+  When an image is missing, the placeholder (X-box) shows instead.
+  Once you add the real image file, the X-box disappears.
+*/
+
+.real-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 2;
+}
+.real-img.loaded { opacity: 1; }
+
+/* Base placeholder box */
+.img-placeholder {
+  position:   absolute; inset: 0;
+  display:    flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0ece5;
+  border:     1.5px dashed var(--border);
+  gap:        8px;
+  overflow:   hidden;
+}
+
+/* Diagonal X lines drawn with CSS (no image needed) */
+.x-cross {
+  position: absolute; inset: 0;
+}
+.x-cross::before,
+.x-cross::after {
+  content:  '';
+  position: absolute;
+  background: rgba(0,0,0,.12);
+  width:    140%; height: 1.5px;
+  top: 50%; left: -20%;
+  transform-origin: center;
+}
+.x-cross::before { transform: rotate(25deg); }
+.x-cross::after  { transform: rotate(-25deg); }
+
+.story-ph .x-cross::before { transform: rotate(18deg); }
+.story-ph .x-cross::after  { transform: rotate(-18deg); }
+
+.ph-label {
+  position:  relative; z-index: 1;
+  font-size: 11px;
+  color:     var(--text-light);
+  text-align: center;
+  line-height: 1.5;
+}
+.ph-label code {
+  font-size: 10px;
+  background: rgba(255,255,255,.7);
+  color:     var(--accent);
+  padding:   1px 5px;
+  border-radius: 4px;
+  display:   inline-block;
+  margin-top: 2px;
+}
+
+/* Hero placeholder */
+.hero-ph {
+  position: absolute; inset: 0;
+  border-radius: var(--radius);
+  border: none;
+}
+
+/* Story placeholder */
+.story-ph { position: absolute; inset: 0; }
+.story-img-wrap { position: relative; }
+
+/* Avatar placeholder */
+.avatar-ph {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: none;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--footer-bg);
+  padding:    40px 24px 28px;
+  margin-top: 12px;
+}
+
+/* Brand row: logo circle + script + tagline */
+.footer-brand-row {
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap:   wrap;
+  gap:         12px;
+  max-width:   820px;
+  margin:      0 auto 12px;
+}
+
+.footer-logo-group {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+}
+
+.footer-logo-circle {
+  width:  46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  border:  2px solid rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.footer-logo-img { width: 32px; height: 32px; }
+
+.footer-logo-script {
+  font-family: 'Pacifico', cursive;
+  font-size:   14px;
+  color:       var(--accent);
+  line-height: 1.2;
+}
+
+.footer-tagline {
+  font-size:  .93rem;
+  color:      rgba(255,255,255,.6);
+}
+
+/* "You Belong" in the same salmon heading style as .site-title in header */
+.footer-site-title {
+  font-size:   1.55rem;
+  font-weight: 900;
+  color:       var(--accent);
+  letter-spacing: .3px;
+  max-width:   820px;
+  margin:      0 auto 16px;
+}
+
+/* Divider line */
+.footer-divider {
+  border:     none;
+  border-top: 1px solid rgba(255,255,255,.12);
+  margin:     0 auto 28px;
+  max-width:  820px;
+}
+
+/* Info columns */
+.footer-cols {
+  display:   grid;
+  grid-template-columns: 1fr 1fr;
+  gap:       24px;
+  max-width: 820px;
+  margin:    0 auto 28px;
+}
+
+.footer-social {
+  max-width: 820px;
+  margin:    0 auto 28px;
+  display:   flex;
+  flex-direction: column;
+  gap:       6px;
+}
+
+.footer-col        { display: flex; flex-direction: column; gap: 6px; }
+
+.footer-col-heading {
+  font-size:   15px;
+  font-weight: 800;
+  color:       var(--white);
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  font-size: 14px;
+  color:     rgba(255,255,255,.6);
+  transition: color .18s;
+  display:   inline-block;
+}
+.footer-link:hover { color: var(--white); }
+
+.footer-copy {
+  font-size: 12px;
+  color:     rgba(255,255,255,.35);
+  text-align: center;
+  max-width: 820px;
+  margin:    0 auto;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* ── SECTION CENTERING ───────────────────────────────────────── */
+.hero-section,
+.page-section { text-align: center; }
+
+.story-body,
+.event-card   { text-align: left; }
+.event-card   { align-items: center; text-align: center; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+/*
+  @media lets you change styles for smaller screens.
+  max-width: 600px → applies on phones
+*/
+
+@media (max-width: 600px) {
+  .site-title   { font-size: 1.25rem; }
+  .hero-heading { font-size: 1.7rem; }
+  .section-heading { font-size: 1.45rem; }
+
+  .friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .groups-grid  { grid-template-columns: 1fr; }
+
+  .footer-cols  { grid-template-columns: 1fr; }
+}
+`;
+var jsCode    = `/*
+╔══════════════════════════════════════════════════════════════╗
+║  IMPORTANT JAVASCRIPT CONCEPTS — REFERENCE NOTES            ║
+╠══════════════════════════════════════════════════════════════╣
+║  document.getElementById('id')                              ║
+║    → Grabs an HTML element by its id="..." attribute.       ║
+║                                                             ║
+║  element.textContent = 'text'                               ║
+║    → Changes visible text inside an element.                ║
+║                                                             ║
+║  element.classList.add('class')                             ║
+║    → Adds a CSS class → changes the element's style.        ║
+║                                                             ║
+║  element.classList.remove('class')                          ║
+║    → Removes a CSS class.                                   ║
+║                                                             ║
+║  localStorage.setItem('key', value)                         ║
+║    → Saves data in the browser (survives page refresh).     ║
+║                                                             ║
+║  localStorage.getItem('key')                                ║
+║    → Reads previously saved data.                           ║
+║                                                             ║
+║  setTimeout(function, ms)                                   ║
+║    → Runs a function after a delay (ms = milliseconds).     ║
+║                                                             ║
+║  element.scrollIntoView()                                   ║
+║    → Smoothly scrolls the page to that element.             ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ── ON PAGE LOAD ────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Restore any previously saved journal thoughts */
+  var saved1 = localStorage.getItem('yb_thought1');
+  var saved2 = localStorage.getItem('yb_thought2');
+  if (saved1) document.getElementById('thoughtInput1').value = saved1;
+  if (saved2) document.getElementById('thoughtInput2').value = saved2;
+
+});
+
+/* ── NAVIGATION ──────────────────────────────────────────────── */
+/*
+  toggleNav() opens or closes the slide-down navigation drawer.
+  It adds/removes the 'open' CSS class which changes max-height.
+*/
+function toggleNav() {
+  var nav = document.getElementById('navbar');
+  var isOpen = nav.classList.contains('open');
+  nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+}
+
+/* closeNav() is called when a nav link is clicked */
+function closeNav() {
+  var nav = document.getElementById('navbar');
+  nav.classList.remove('open');
+  nav.setAttribute('aria-hidden', 'true');
+}
+
+/* ── IMAGE HELPERS ───────────────────────────────────────────── */
+/*
+  imgLoaded(img) → called by onload="" in HTML.
+  Fades the real image in and hides the placeholder.
+
+  imgError(img) → called by onerror="" in HTML.
+  Hides the broken-image icon; placeholder stays visible.
+*/
+function imgLoaded(img) {
+  img.classList.add('loaded');
+  var ph = img.parentElement.querySelector('.img-placeholder');
+  if (ph) ph.style.display = 'none';
+}
+
+function imgError(img) {
+  img.style.display = 'none';
+}
+
+/* ── JOIN COMMUNITY ──────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = 'signup.html';
+  when you have a sign-up page ready.
+*/
+function handleJoin() {
+  alert(
+    'Welcome! 🎉\\n\\n' +
+    'Replace this alert in script.js:\\n' +
+    '  window.location.href = "signup.html";'
+  );
+}
+
+/* ── READ MORE ───────────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = 'story' + id + '.html';
+*/
+function readMore(id) {
+  alert(
+    'Opening story ' + id + '...\\n\\n' +
+    'Replace with: window.location.href = "story' + id + '.html";'
+  );
+}
+
+/* ── SAVE THOUGHTS ───────────────────────────────────────────── */
+/*
+  Saves both journal textareas to browser localStorage.
+  localStorage keeps the data even after the page is refreshed.
+*/
+function saveThoughts() {
+  var t1  = document.getElementById('thoughtInput1').value;
+  var t2  = document.getElementById('thoughtInput2').value;
+  var msg = document.getElementById('saveMsg');
+
+  if (!t1.trim() && !t2.trim()) {
+    msg.textContent  = 'Write something first!';
+    msg.style.color  = '#999';
+    clearAfter(msg, 2500);
+    return;
+  }
+
+  localStorage.setItem('yb_thought1', t1);
+  localStorage.setItem('yb_thought2', t2);
+
+  msg.textContent = '✓ Saved!';
+  msg.style.color = 'var(--accent)';
+  clearAfter(msg, 3000);
+}
+
+function clearAfter(el, ms) {
+  setTimeout(function () { el.textContent = ''; }, ms);
+}
+
+/* ── ADD FRIEND ──────────────────────────────────────────────── */
+/*
+  Toggles a friend card button between "+ Add" and "✓ Added".
+  The button becomes disabled after clicking so it can't be
+  clicked again accidentally.
+
+  ► In a real app, replace the console.log with an API call
+  that sends a friend request to your backend.
+*/
+function addFriend(button, name) {
+  if (button.disabled) return;
+
+  button.textContent = '✓ Added';
+  button.classList.add('added');
+  button.style.background    = 'var(--accent-light)';
+  button.style.borderColor   = 'var(--accent)';
+  button.style.color         = 'var(--accent)';
+  button.disabled            = true;
+
+  /* ► Replace this with a real API call when your backend is ready */
+  console.log('Friend request sent to: ' + name);
+}
+
+/* ── SEE ALL FRIENDS ─────────────────────────────────────────── */
+/*
+  ► REPLACE the alert with: window.location.href = 'friends.html';
+*/
+function seeAllFriends() {
+  alert(
+    'Opening all friends...\\n\\n' +
+    'Replace with: window.location.href = "friends.html";'
+  );
+}
+
+/* ── JOIN GROUP ──────────────────────────────────────────────── */
+/*
+  Changes the "Join Group" button to "✓ Joined" when clicked.
+  ► In a real app, replace console.log with an API request.
+*/
+function joinGroup(button, groupName) {
+  if (button.disabled) return;
+
+  button.textContent = '✓ Joined!';
+  button.disabled    = true;
+  button.style.opacity = '.7';
+
+  /* ► Replace this with a real join API call */
+  console.log('Joined group: ' + groupName);
+}
+
+/* ── RSVP (EVENTS) ───────────────────────────────────────────── */
+/*
+  Marks the RSVP button as confirmed.
+  ► Replace console.log with an API call to register the user.
+*/
+function rsvp(button, eventName) {
+  if (button.disabled) return;
+
+  button.textContent = '✓ You\\'re in!';
+  button.disabled    = true;
+  button.style.background = '#c0392b';
+
+  /* ► Replace with a real RSVP API call */
+  console.log('RSVP confirmed for: ' + eventName);
+}
+
+/* ── SUPPORT CHAT ────────────────────────────────────────────── */
+/*
+  sendMessage() reads the chat input, adds the user's message
+  as a bubble on the right, then adds an auto-reply after a
+  short delay.
+
+  Auto-replies are chosen randomly from the replies array.
+  ► Replace the replies array with real responses, or connect
+    this function to an actual chat / AI API.
+*/
+var chatReplies = [
+  'Thank you for sharing that with us. ❤️',
+  'We\\'re so glad you\\'re here!',
+  'You\\'re not alone — our community is here for you. 🌍',
+  'That takes courage to share. We appreciate you.',
+  'We hear you. Would you like to connect with a community group?',
+  'You belong here, always. 💛'
+];
+
+function sendMessage() {
+  var input    = document.getElementById('chatInput');
+  var messages = document.getElementById('chatMessages');
+  var text     = input.value.trim();
+
+  if (!text) return;
+
+  /* Add the user's message (right-aligned bubble) */
+  var userBubble       = document.createElement('div');
+  userBubble.className = 'chat-bubble sent';
+  userBubble.textContent = text;
+  messages.appendChild(userBubble);
+
+  /* Clear input */
+  input.value = '';
+
+  /* Scroll to bottom of chat */
+  messages.scrollTop = messages.scrollHeight;
+
+  /* Send an auto-reply after a short delay */
+  setTimeout(function () {
+    var reply       = chatReplies[Math.floor(Math.random() * chatReplies.length)];
+    var replyBubble       = document.createElement('div');
+    replyBubble.className = 'chat-bubble received';
+    replyBubble.textContent = reply;
+    messages.appendChild(replyBubble);
+    messages.scrollTop = messages.scrollHeight;
+  }, 900);
+}
+`;
+var logoCode  = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110">
+  <!-- Left hand -->
+  <g fill="#2d7d32">
+    <rect x="14" y="12" width="10" height="36" rx="5"/>
+    <rect x="26" y="6"  width="10" height="42" rx="5"/>
+    <rect x="38" y="9"  width="10" height="39" rx="5"/>
+    <rect x="50" y="14" width="10" height="34" rx="5"/>
+    <rect x="4"  y="34" width="16" height="10" rx="5" transform="rotate(-25 12 39)"/>
+    <rect x="12" y="42" width="50" height="28" rx="10"/>
+  </g>
+
+  <!-- Right hand (mirrored) -->
+  <g fill="#2d7d32" transform="translate(260,0) scale(-1,1)">
+    <rect x="14" y="12" width="10" height="36" rx="5"/>
+    <rect x="26" y="6"  width="10" height="42" rx="5"/>
+    <rect x="38" y="9"  width="10" height="39" rx="5"/>
+    <rect x="50" y="14" width="10" height="34" rx="5"/>
+    <rect x="4"  y="34" width="16" height="10" rx="5" transform="rotate(-25 12 39)"/>
+    <rect x="12" y="42" width="50" height="28" rx="10"/>
+  </g>
+
+  <!-- YOU BELONG text -->
+  <text x="130" y="88" text-anchor="middle"
+        font-family="Georgia, serif"
+        font-weight="bold"
+        font-size="22"
+        letter-spacing="2"
+        fill="#2d7d32">YOU BELONG</text>
+
+  <!-- Small underline accent -->
+  <line x1="80" y1="95" x2="180" y2="95" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+`;
+
+function download(filename, content, type) {
+  var blob = new Blob([content], { type: type });
+  var a    = document.createElement('a');
+  a.href   = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function downloadAll() {
+  setTimeout(function(){ download('index.html', indexCode, 'text/html');       },   0);
+  setTimeout(function(){ download('style.css',  cssCode,   'text/css');         }, 400);
+  setTimeout(function(){ download('script.js',  jsCode,    'text/javascript'); }, 800);
+  setTimeout(function(){ download('logo.svg',   logoCode,  'image/svg+xml');   }, 1200);
+}
+</script>
+
+</body>
+</html>
