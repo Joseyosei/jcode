@@ -7,318 +7,551 @@
   <link rel="stylesheet" href="style.css">
   <!--
   ╔══════════════════════════════════════════════════════════════╗
-  ║  IMPORTANT HTML TAGS — REFERENCE NOTES                      ║
+  ║  IMPORTANT HTML TAGS — QUICK REFERENCE                      ║
   ╠══════════════════════════════════════════════════════════════╣
-  ║  <img src="path/image.jpg" alt="description">               ║
-  ║    → Displays an image. src= is the file path.              ║
-  ║    → alt= describes the image (for accessibility).          ║
-  ║    → ALWAYS fill in alt text!                               ║
+  ║  <img src="images/file.jpg" alt="description">              ║
+  ║    → Adds a photo. src= is the file path.                   ║
+  ║    → alt= describes it (required for accessibility).        ║
+  ║    → ALWAYS write something in alt="..."                    ║
   ║                                                             ║
   ║  <a href="https://...">Link text</a>                        ║
-  ║    → Creates a clickable link. href= is the destination.    ║
-  ║    → Use href="mailto:you@email.com" for email links.       ║
-  ║    → Use href="tel:1234567" for phone links.                ║
-  ║    → Add target="_blank" to open in a new tab.              ║
+  ║    → Clickable link.                                        ║
+  ║    → href="mailto:you@email.com" opens email app.           ║
+  ║    → href="tel:12345" dials on mobile.                      ║
+  ║    → target="_blank" opens in a new tab.                    ║
   ║                                                             ║
   ║  <button onclick="functionName()">Label</button>            ║
-  ║    → Clickable button. onclick= runs JavaScript.            ║
+  ║    → Runs JavaScript when clicked.                          ║
   ║                                                             ║
-  ║  <textarea placeholder="..."></textarea>                    ║
-  ║    → Multi-line text input box.                             ║
+  ║  <textarea placeholder="hint..."></textarea>                ║
+  ║    → Multi-line text input.                                 ║
   ║                                                             ║
-  ║  <input type="text" placeholder="...">                      ║
-  ║    → Single-line text input (search bar, form fields).      ║
-  ║                                                             ║
-  ║  <nav>, <header>, <main>, <footer>, <section>               ║
-  ║    → Semantic layout tags — they organise page structure.   ║
+  ║  <input type="text" placeholder="hint...">                  ║
+  ║    → Single-line text field.                                ║
   ╚══════════════════════════════════════════════════════════════╝
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ════════════════════════════════
-       HEADER — Logo · Title · Search
-       ════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       STICKY HEADER — stays visible while scrolling
+       ══════════════════════════════════════════════ -->
   <header class="header">
 
-    <!-- LOGO
-         ► To swap in your own logo image:
-           1. Put your image file in the images/ folder
-           2. Change src="images/logo.svg" to your file name
-           3. Update alt= with a short description            -->
-    <div class="logo-container">
-      <img src="images/logo.svg"
-           alt="You Belong logo — two hands reaching together"
-           class="logo-img">
-      <span class="logo-wordmark">YOU BELONG</span>
+    <!-- LOGO (left)
+         ► To use your own logo image:
+           1. Save it as images/logo.svg (or .png/.jpg)
+           2. Change src= to match your filename
+           3. Update alt= with a short description     -->
+    <div class="logo-group">
+      <div class="logo-circle">
+        <img src="images/logo.svg"
+             alt="You Belong — hands reaching together"
+             class="logo-img">
+      </div>
+      <span class="logo-script">You<br>Belong</span>
     </div>
 
-    <!-- SITE TITLE (centre of header) -->
-    <h1 class="site-title">YOU BELONG</h1>
+    <!-- SITE TITLE (centre) — salmon bold heading
+         This same style appears in the footer too    -->
+    <h1 class="site-title">You Belong</h1>
 
-    <!-- SEARCH BAR
-         ► <input type="text"> creates the text field.
-         ► placeholder= shows grey hint text when empty.      -->
-    <div class="search-container">
-      <input type="text"
-             id="searchInput"
-             placeholder="Search..."
-             class="search-bar"
-             aria-label="Search the site"
-             onkeydown="if(event.key==='Enter') handleSearch()">
-      <button class="search-btn" onclick="handleSearch()" aria-label="Go">&#128269;</button>
-    </div>
+    <!-- HAMBURGER BUTTON — opens the nav on mobile  -->
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open navigation">
+      &#9776;
+    </button>
 
   </header>
 
-  <!-- ════════════════════════════════
-       NAVIGATION BAR
-       ════════════════════════════════
-       ► Each <a> is one nav item.
-       ► Change href="#" to a page URL when you build more pages. -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <a href="#"            class="nav-link active" onclick="setActive(event,this)">Home</a>
-    <a href="#groups"      class="nav-link"        onclick="setActive(event,this)">Community Groups</a>
-    <a href="#stories"     class="nav-link"        onclick="setActive(event,this)">Stories</a>
-    <a href="#events"      class="nav-link"        onclick="setActive(event,this)">Events</a>
-    <a href="#support"     class="nav-link"        onclick="setActive(event,this)">Support Chat</a>
-    <a href="#profile"     class="nav-link"        onclick="setActive(event,this)">Profile</a>
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION DRAWER
+       Slides down when the ☰ button is clicked.
+       ► Change href="#section-id" to link to pages.
+       ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-hidden="true">
+    <a href="#hero"    class="nav-link" onclick="closeNav()">Home</a>
+    <a href="#groups"  class="nav-link" onclick="closeNav()">Community Groups</a>
+    <a href="#stories" class="nav-link" onclick="closeNav()">Stories</a>
+    <a href="#events"  class="nav-link" onclick="closeNav()">Events</a>
+    <a href="#support" class="nav-link" onclick="closeNav()">Support Chat</a>
+    <a href="#profile" class="nav-link" onclick="closeNav()">Profile</a>
   </nav>
 
-  <!-- ════════════════════════════════
-       MAIN PAGE CONTENT
-       ════════════════════════════════ -->
-  <main class="main-content">
+  <main>
 
-    <!-- ── HERO SECTION ─────────────────────────────────────── -->
-    <section class="hero-section">
+    <!-- ══════════════════════════════════════════
+         HERO SECTION
+         ══════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
 
-      <!-- HERO IMAGE (left column)
-           ► Replace src= with your chosen hero photo.
-           ► Recommended size: at least 700 × 500 px.
-           ► The placeholder X-box shows until you add the image. -->
-      <div class="img-wrap hero-img-wrap">
+      <!-- HERO IMAGE
+           ► Replace src= with your own photo.
+           ► Recommended size: 800 × 600 px or larger.
+           ► Placeholder X-box shows until image is added. -->
+      <div class="hero-img-wrap">
         <img src="images/hero.jpg"
-             alt="Diverse group of people smiling and belonging together"
+             alt="Diverse children celebrating belonging together"
              class="hero-img real-img"
-             onload="imgLoaded(this)"
-             onerror="imgError(this)">
-        <div class="img-placeholder hero-placeholder">
-          <div class="placeholder-x"></div>
-          <p class="placeholder-note">Hero Image<br><code>images/hero.jpg</code><br>Min 700×500 px</p>
+             onload="imgLoaded(this)" onerror="imgError(this)">
+        <div class="img-placeholder hero-ph">
+          <div class="x-cross"></div>
+          <p class="ph-label">Hero Image<br><code>images/hero.jpg</code><br>800 × 600 px</p>
         </div>
+        <!-- Overlay badge on top of the photo -->
+        <div class="hero-badge">&#127760; Everyone Welcome</div>
       </div>
 
-      <!-- HERO TEXT (right column)
-           ► Replace the heading, paragraphs, and button label below. -->
-      <div class="hero-text">
-        <h2 class="hero-heading">We Are Here For You</h2>
-        <!-- ► Replace this line with your tagline or opening sentence -->
-        <p class="hero-sub">A safe, welcoming space where everyone belongs — no matter who you are or where you come from.</p>
-        <!-- ► Replace this line with a second supporting sentence -->
-        <p class="hero-sub">Connect, share stories, and find your community today.</p>
-        <button class="btn-primary" onclick="handleJoin()">Join Community</button>
+      <!-- HERO TEXT
+           ► Replace the pill label, heading, body text, and button. -->
+      <div class="hero-body">
+        <span class="cat-pill cat-pink">Third Culture Kids (TCKs)</span>
+
+        <h2 class="hero-heading">
+          We Are Here<br>
+          <span class="accent">For You</span> &#128155;
+        </h2>
+
+        <p class="hero-text">
+          Being a Third Culture Kid can sometimes feel confusing — like you belong
+          everywhere and nowhere at the same time. But <strong>you are not alone.</strong>
+          Every story, culture, and experience you carry makes you unique and strong.
+          Together, we can support one another, celebrate our differences, and find a
+          place where we truly belong.
+        </p>
+
+        <button class="btn-pill btn-accent" onclick="handleJoin()">Join Our Community</button>
       </div>
 
     </section>
 
-    <!-- ── STORIES · THOUGHTS · FRIENDS ──────────────────────── -->
-    <section class="bottom-section">
+    <!-- ══════════════════════════════════════════
+         OUR STORIES
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="stories">
 
-      <!-- ── STORY CARDS (left) ── -->
-      <div class="stories-panel" id="stories">
-        <h3 class="panel-heading">Latest Stories</h3>
-        <div class="stories-grid">
+      <h2 class="section-heading">Our <span class="accent">Stories</span></h2>
+      <p class="section-sub">Real stories from real people. Find one that speaks to you.</p>
 
-          <!-- STORY CARD 1
-               ► Replace src= with your story image (square, ~400×400 px).
-               ► Replace the <p> text with your story title / summary. -->
-          <article class="story-card">
-            <div class="img-wrap story-img-wrap">
-              <img src="images/story1.jpg"
-                   alt="Story 1 — a community member's journey"
-                   class="story-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder story-placeholder">
-                <div class="placeholder-x"></div>
-                <p class="placeholder-note">Story 1<br><code>images/story1.jpg</code></p>
-              </div>
-            </div>
-            <!-- ► Replace this text with your story title/summary -->
-            <p class="story-text">Finding my voice in the community that welcomed me home.</p>
-            <button class="btn-read-more" onclick="readMore(1)">Read More</button>
-          </article>
-
-          <!-- STORY CARD 2 -->
-          <article class="story-card">
-            <div class="img-wrap story-img-wrap">
-              <img src="images/story2.jpg"
-                   alt="Story 2"
-                   class="story-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder story-placeholder">
-                <div class="placeholder-x"></div>
-                <p class="placeholder-note">Story 2<br><code>images/story2.jpg</code></p>
-              </div>
-            </div>
-            <!-- ► Replace this text -->
-            <p class="story-text">How one group changed an entire neighbourhood together.</p>
-            <button class="btn-read-more" onclick="readMore(2)">Read More</button>
-          </article>
-
-          <!-- STORY CARD 3 -->
-          <article class="story-card">
-            <div class="img-wrap story-img-wrap">
-              <img src="images/story3.jpg"
-                   alt="Story 3"
-                   class="story-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder story-placeholder">
-                <div class="placeholder-x"></div>
-                <p class="placeholder-note">Story 3<br><code>images/story3.jpg</code></p>
-              </div>
-            </div>
-            <!-- ► Replace this text -->
-            <p class="story-text">Building bridges between generations through shared stories.</p>
-            <button class="btn-read-more" onclick="readMore(3)">Read More</button>
-          </article>
-
+      <!-- STORY CARD 1
+           ► Replace src= with your image (800 × 450 px recommended).
+           ► Replace category pill, title, and description text.        -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story1.jpg"
+               alt="Children in traditional cultural dress"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 1 Image<br><code>images/story1.jpg</code></p>
+          </div>
         </div>
-      </div>
-
-      <!-- ── THOUGHTS / JOURNAL (centre) ── -->
-      <div class="thoughts-panel">
-        <h3 class="panel-heading">Your Thoughts</h3>
-        <div class="thoughts-box">
-          <!--  <textarea> = multi-line text input.
-                rows= sets the visible height.
-                placeholder= shows hint text when empty.       -->
-          <textarea id="thoughtsInput"
-                    class="thoughts-textarea"
-                    rows="7"
-                    placeholder="Write your thoughts here..."
-                    aria-label="Write your thoughts"></textarea>
-          <button class="btn-primary save-btn" onclick="saveThoughts()">Save</button>
-          <p id="saveMsg" class="save-msg" aria-live="polite"></p>
+        <div class="story-body">
+          <span class="cat-pill cat-pink">COMMUNITY</span>
+          <h3 class="story-title">Finding Strength in Community</h3>
+          <p class="story-text">Sometimes life feels easier when we know people understand us.
+            In this story, friendship and support help turn loneliness into strength.
+            By connecting with others who share similar experiences, we learn that
+            community can give us courage, comfort, and confidence.</p>
+          <button class="btn-outline-pill" onclick="readMore(1)">Read More</button>
         </div>
-      </div>
+      </article>
 
-      <!-- ── FRIENDS (right) ── -->
-      <div class="friends-panel">
-        <h3 class="panel-heading">Friends</h3>
-        <div class="friends-grid">
-
-          <!-- FRIEND CARD 1
-               ► Replace src= with profile photo (square, ~200×200 px).
-               ► Replace "Friend 1" with the person's name.         -->
-          <div class="friend-card">
-            <div class="img-wrap friend-img-wrap">
-              <img src="images/friend1.jpg"
-                   alt="Friend 1 profile photo"
-                   class="friend-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder friend-placeholder">
-                <div class="friend-silhouette"></div>
-                <p class="placeholder-note"><code>friend1.jpg</code></p>
-              </div>
-            </div>
-            <button class="btn-add-friend" onclick="addFriend(this,'Friend 1')">Add friend</button>
+      <!-- STORY CARD 2 -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story2.jpg"
+               alt="Young people wrapped in country flags"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 2 Image<br><code>images/story2.jpg</code></p>
           </div>
-
-          <!-- FRIEND CARD 2 -->
-          <div class="friend-card">
-            <div class="img-wrap friend-img-wrap">
-              <img src="images/friend2.jpg"
-                   alt="Friend 2 profile photo"
-                   class="friend-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder friend-placeholder">
-                <div class="friend-silhouette"></div>
-                <p class="placeholder-note"><code>friend2.jpg</code></p>
-              </div>
-            </div>
-            <button class="btn-add-friend" onclick="addFriend(this,'Friend 2')">Add friend</button>
-          </div>
-
-          <!-- FRIEND CARD 3 -->
-          <div class="friend-card">
-            <div class="img-wrap friend-img-wrap">
-              <img src="images/friend3.jpg"
-                   alt="Friend 3 profile photo"
-                   class="friend-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder friend-placeholder">
-                <div class="friend-silhouette"></div>
-                <p class="placeholder-note"><code>friend3.jpg</code></p>
-              </div>
-            </div>
-            <button class="btn-add-friend" onclick="addFriend(this,'Friend 3')">Add friend</button>
-          </div>
-
-          <!-- FRIEND CARD 4 -->
-          <div class="friend-card">
-            <div class="img-wrap friend-img-wrap">
-              <img src="images/friend4.jpg"
-                   alt="Friend 4 profile photo"
-                   class="friend-img real-img"
-                   onload="imgLoaded(this)" onerror="imgError(this)">
-              <div class="img-placeholder friend-placeholder">
-                <div class="friend-silhouette"></div>
-                <p class="placeholder-note"><code>friend4.jpg</code></p>
-              </div>
-            </div>
-            <button class="btn-add-friend" onclick="addFriend(this,'Friend 4')">Add friend</button>
-          </div>
-
         </div>
-        <button class="btn-see-all" onclick="seeAllFriends()">SEE ALL FRIENDS</button>
+        <div class="story-body">
+          <span class="cat-pill cat-blue">HEALING</span>
+          <h3 class="story-title">A Journey of Healing and Hope</h3>
+          <p class="story-text">Healing takes time, but every step forward matters. This story
+            shows how challenges can help us grow stronger and discover hope even in difficult
+            moments. With patience, support, and belief in ourselves, brighter days can always
+            be found ahead.</p>
+          <button class="btn-outline-pill" onclick="readMore(2)">Read More</button>
+        </div>
+      </article>
+
+      <!-- STORY CARD 3 -->
+      <article class="story-card">
+        <div class="story-img-wrap">
+          <img src="images/story3.jpg"
+               alt="Children from different cultures hugging"
+               class="story-img real-img"
+               onload="imgLoaded(this)" onerror="imgError(this)">
+          <div class="img-placeholder story-ph">
+            <div class="x-cross"></div>
+            <p class="ph-label">Story 3 Image<br><code>images/story3.jpg</code></p>
+          </div>
+        </div>
+        <div class="story-body">
+          <span class="cat-pill cat-green">UNITY</span>
+          <h3 class="story-title">Together We Are Stronger</h3>
+          <p class="story-text">No one has to face life's struggles alone. When people come
+            together, they can overcome challenges, inspire one another, and create positive
+            change. This story reminds us that teamwork, kindness, and unity make us stronger
+            than we could ever be on our own.</p>
+          <button class="btn-outline-pill" onclick="readMore(3)">Read More</button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SHARE YOUR THOUGHTS
+         ══════════════════════════════════════════ -->
+    <section class="page-section thoughts-section">
+
+      <h2 class="section-heading">Share Your <span class="accent">Thoughts</span> &#9998;&#65039;</h2>
+      <p class="section-sub">Write your thoughts here...</p>
+
+      <div class="thoughts-card">
+        <!-- NOTE: <textarea> creates a multi-line text box.
+             placeholder= shows hint text when the box is empty.
+             ► Change the placeholder to anything you like.       -->
+        <textarea id="thoughtInput1"
+                  class="thought-input"
+                  rows="3"
+                  placeholder="Today I felt..."
+                  aria-label="How are you feeling today?"></textarea>
+
+        <textarea id="thoughtInput2"
+                  class="thought-input"
+                  rows="4"
+                  placeholder="My story is..."
+                  aria-label="Share your story"></textarea>
+
+        <!-- ► onclick="saveThoughts()" runs the save function in script.js -->
+        <button class="btn-pill btn-accent save-btn" onclick="saveThoughts()">
+          &#128190; Save
+        </button>
+        <p id="saveMsg" class="save-msg" aria-live="polite"></p>
       </div>
 
     </section>
+
+    <!-- ══════════════════════════════════════════
+         YOUR FRIENDS
+         ══════════════════════════════════════════ -->
+    <section class="page-section friends-section">
+
+      <h2 class="section-heading">Your <span class="accent">Friends</span> &#127760;</h2>
+      <p class="section-sub">People from around the world in your circle.</p>
+
+      <div class="friends-grid">
+
+        <!-- FRIEND CARD
+             ► To add a real profile photo:
+               1. Put it in images/ (e.g. images/friend1.jpg)
+               2. The <img> tag loads it; emoji hides automatically
+             ► Replace name, flag emoji, and country for each card. -->
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend1.jpg" alt="Amara" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127998;</span>
+            </div>
+          </div>
+          <p class="friend-name">Amara</p>
+          <p class="friend-country">&#127468;&#127469; Ghana</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Amara')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend2.jpg" alt="Yuki" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128102;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Yuki</p>
+          <p class="friend-country">&#127471;&#127477; Japan</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Yuki')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend3.jpg" alt="Lena" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128103;&#127995;</span>
+            </div>
+          </div>
+          <p class="friend-name">Lena</p>
+          <p class="friend-country">&#127465;&#127466; Germany</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Lena')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend4.jpg" alt="Carlos" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128102;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Carlos</p>
+          <p class="friend-country">&#127474;&#127485; Mexico</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Carlos')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend5.jpg" alt="Priya" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127997;</span>
+            </div>
+          </div>
+          <p class="friend-name">Priya</p>
+          <p class="friend-country">&#127470;&#127475; India</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Priya')">+ Add</button>
+        </div>
+
+        <div class="friend-card">
+          <div class="avatar-wrap">
+            <img src="images/friend6.jpg" alt="Sofia" class="avatar-img real-img"
+                 onload="imgLoaded(this)" onerror="imgError(this)">
+            <div class="img-placeholder avatar-ph">
+              <span class="avatar-emoji">&#128105;&#127996;</span>
+            </div>
+          </div>
+          <p class="friend-name">Sofia</p>
+          <p class="friend-country">&#127463;&#127479; Brazil</p>
+          <button class="btn-outline-pill friend-btn" onclick="addFriend(this,'Sofia')">+ Add</button>
+        </div>
+
+      </div>
+
+      <button class="btn-pill btn-accent see-all-btn" onclick="seeAllFriends()">
+        See All Friends
+      </button>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         COMMUNITY GROUPS
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="groups">
+
+      <h2 class="section-heading">Community <span class="accent">Groups</span> &#129309;</h2>
+      <p class="section-sub">Find your people. Join a group that feels like home.</p>
+
+      <div class="groups-grid">
+
+        <!-- GROUP CARD
+             Each card has a coloured border (border-red/blue/green/yellow).
+             ► Replace emoji, name, and description for each group.        -->
+
+        <div class="group-card border-red">
+          <span class="group-icon">&#127760;</span>
+          <h3 class="group-name">Global Roots</h3>
+          <p class="group-desc">For those who call multiple countries home.</p>
+          <button class="btn-outline-pill red-btn" onclick="joinGroup(this,'Global Roots')">Join Group</button>
+        </div>
+
+        <div class="group-card border-blue">
+          <span class="group-icon">&#127912;</span>
+          <h3 class="group-name">Creative Cultures</h3>
+          <p class="group-desc">Art, music and dance from every corner of the world.</p>
+          <button class="btn-outline-pill blue-btn" onclick="joinGroup(this,'Creative Cultures')">Join Group</button>
+        </div>
+
+        <div class="group-card border-green">
+          <span class="group-icon">&#128218;</span>
+          <h3 class="group-name">Young Explorers</h3>
+          <p class="group-desc">A safe space for kids discovering who they are.</p>
+          <button class="btn-outline-pill green-btn" onclick="joinGroup(this,'Young Explorers')">Join Group</button>
+        </div>
+
+        <div class="group-card border-yellow">
+          <span class="group-icon">&#128172;</span>
+          <h3 class="group-name">Language Swap</h3>
+          <p class="group-desc">Learn a new language from a new friend.</p>
+          <button class="btn-outline-pill yellow-btn" onclick="joinGroup(this,'Language Swap')">Join Group</button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         UPCOMING EVENTS
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="events">
+
+      <h2 class="section-heading">Upcoming <span class="accent">Events</span> &#128197;</h2>
+      <p class="section-sub">Meet up, learn, and celebrate together.</p>
+
+      <!-- EVENT CARD
+           ► Replace the date (day + month), event name, and description.
+           ► The salmon date badge is styled purely with CSS — no image needed. -->
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">14</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <!-- ► Replace event name -->
+        <h3 class="event-name">Global Culture Day</h3>
+        <!-- ► Replace event description -->
+        <p class="event-desc">Celebrate the colours of the world with food, music and dance.
+          Open to all ages.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Global Culture Day')">RSVP</button>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">21</span>
+          <span class="event-month">JUN</span>
+        </div>
+        <h3 class="event-name">Story Circle for Kids</h3>
+        <p class="event-desc">Children share stories from their home countries in a safe and
+          fun environment.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Story Circle for Kids')">RSVP</button>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date-badge">
+          <span class="event-day">5</span>
+          <span class="event-month">JUL</span>
+        </div>
+        <h3 class="event-name">Unity Walk</h3>
+        <p class="event-desc">A community walk celebrating togetherness and belonging.
+          All welcome.</p>
+        <button class="btn-pill btn-accent rsvp-btn"
+                onclick="rsvp(this,'Unity Walk')">RSVP</button>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SUPPORT CHAT
+         ══════════════════════════════════════════ -->
+    <section class="page-section" id="support">
+
+      <div class="chat-widget">
+
+        <!-- Chat header — salmon background -->
+        <div class="chat-header">
+          <div class="chat-logo-circle">
+            <img src="images/logo.svg" alt="You Belong" class="chat-logo-img">
+          </div>
+          <div class="chat-header-text">
+            <h3 class="chat-title">Support Chat</h3>
+            <p class="chat-subtitle">We're here for you, always &#128155;</p>
+          </div>
+          <!-- Green dot = online indicator -->
+          <span class="online-dot" title="Online"></span>
+        </div>
+
+        <!-- Message area — messages appear here via JavaScript -->
+        <div class="chat-messages" id="chatMessages">
+          <!-- Opening message from the site -->
+          <div class="chat-bubble received">
+            Hi! &#128075; Welcome to You Belong. How are you feeling today?
+          </div>
+        </div>
+
+        <!-- Input row
+             NOTE: onkeydown="if(event.key==='Enter')sendMessage()"
+                   → pressing Enter triggers the send function.       -->
+        <div class="chat-input-row">
+          <input type="text"
+                 id="chatInput"
+                 class="chat-input"
+                 placeholder="Type a message..."
+                 aria-label="Type your message"
+                 onkeydown="if(event.key==='Enter')sendMessage()">
+          <button class="btn-pill btn-accent chat-send-btn"
+                  onclick="sendMessage()">Send</button>
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <!-- ════════════════════════════════
-       FOOTER — Contact · Help · Social
-       ════════════════════════════════
-       ► href="mailto:..." opens the user's email app.
-       ► href="tel:..."   dials on mobile devices.
-       ► target="_blank"  opens social links in a new tab.    -->
+  <!-- ══════════════════════════════════════════════
+       FOOTER — dark background
+       "You Belong" appears here in the same salmon
+       heading style as the top of the page.
+       ══════════════════════════════════════════════ -->
   <footer class="footer">
 
-    <div class="footer-col">
-      <h4 class="footer-heading">Contact Us</h4>
-      <!-- ► Replace with your real email address -->
-      <a href="mailto:hello@youbelong.com" class="footer-link">hello@youbelong.com</a>
-      <!-- ► Replace with your real phone number -->
-      <a href="tel:1234676767"             class="footer-link">123-467-67-67</a>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-heading">Need Help?</h4>
-      <!-- ► Replace href="#" with your help centre page URL -->
-      <a href="#" class="footer-link">Visit our help centre</a>
-      <div class="footer-row">
-        <a href="#" class="footer-link">Privacy</a>
-        <span class="footer-sep">|</span>
-        <a href="#" class="footer-link">Terms</a>
+    <!-- Brand row: logo + "You Belong" title + tagline -->
+    <div class="footer-brand-row">
+      <div class="footer-logo-group">
+        <div class="footer-logo-circle">
+          <img src="images/logo.svg" alt="You Belong logo" class="footer-logo-img">
+        </div>
+        <!-- "You Belong" in the same salmon heading style as the header title
+             ► This is what the user asked for: same style as the heading -->
+        <span class="footer-logo-script">You<br>Belong</span>
       </div>
+      <p class="footer-tagline">A community for everyone, everywhere.</p>
     </div>
 
-    <div class="footer-col">
-      <h4 class="footer-heading">Follow Us</h4>
-      <!-- ► Replace href="#" with your actual social media URLs -->
-      <a href="#" class="footer-link social" target="_blank" rel="noopener">TikTok</a>
-      <a href="#" class="footer-link social" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" class="footer-link social" target="_blank" rel="noopener">Facebook</a>
+    <!-- "You Belong" heading — same salmon bold style as site title in header -->
+    <p class="footer-site-title">You Belong</p>
+
+    <hr class="footer-divider">
+
+    <!-- Info columns -->
+    <div class="footer-cols">
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Contact Us</h4>
+        <!-- NOTE: href="mailto:..." opens the user's email app -->
+        <!-- ► Replace with your real email -->
+        <a href="mailto:hello@youbelong.com" class="footer-link">hello@youbelong.com</a>
+        <!-- NOTE: href="tel:..." dials on mobile -->
+        <!-- ► Replace with your real phone -->
+        <a href="tel:1234676767"             class="footer-link">123-467-67-67</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-heading">Need Help?</h4>
+        <!-- ► Replace # with your help page URL -->
+        <a href="#" class="footer-link">Visit our Help Centre</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Use</a>
+      </div>
+
     </div>
+
+    <div class="footer-social">
+      <h4 class="footer-col-heading">Follow Us</h4>
+      <!-- NOTE: target="_blank" opens social links in a new tab -->
+      <!-- ► Replace # with your real social URLs -->
+      <a href="#" class="footer-link" target="_blank" rel="noopener">TikTok</a>
+      <a href="#" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <p class="footer-copy">&copy; 2026 You Belong. All rights reserved.</p>
 
   </footer>
 
   <!--
   NOTE: <script src="script.js"> is placed at the BOTTOM of <body>.
-  This ensures the page elements load before JavaScript runs.
+  This ensures HTML elements exist before JavaScript runs.
   Never move it to <head> without adding the defer attribute.
   -->
   <script src="script.js"></script>
